@@ -1,4 +1,4 @@
-[
+export  const DataRu =[
   {
     "id": 1,
     "question": "У Вас много различных хобби?",
@@ -70,3 +70,4 @@
     ]
   }
 ]
+export default DataRu;

@@ -1,15 +1,20 @@
 import React from 'react';
 import {Button, Text, View} from 'react-native';
+import { useTranslation } from 'react-i18next';
+import { LanguageSelect } from '../components/languageSelect';
 
 const App = ({navigation}) => {
+    const { t } = useTranslation()
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Home Screen</Text>
+        <>
+        <LanguageSelect  style={{  marginTop: 10, }} />
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'skyblue' }}>
+            <Text>{t('HomeScreen')}</Text>
             <Button
-                title="Go to the test"
-                onPress={() => navigation.navigate('EPQ-R')}
-            />
-        </View>
+                title={t('GoToTheTest')}
+                onPress={() => navigation.navigate('EPQ-R')} />
+          </View>
+        </>
     );
 };
 
