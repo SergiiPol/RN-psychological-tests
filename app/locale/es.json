@@ -1,3 +1,9 @@
 {
-  "greeting": "ES translation"
+  "HomeScreen": "Página principal",
+  "GoToTheTest": "Iniciar prueba",
+  "Language": "Idioma:", 
+  "Home": "Página principal",
+  "ResultScreen:": "Resultado",
+  "QuestionNumber": "Número de pregunta #",
+  "Result": "Resultado"
 }

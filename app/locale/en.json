@@ -1,3 +1,9 @@
 {
-    "greeting": "EN translation"
-}
+    "HomeScreen": "Home Screen",
+    "GoToTheTest": "Go to the test",
+    "Language": "Language:", 
+    "Home": "Home",
+    "ResultScreen": "Result",
+    "QuestionNumber": "Question number #",
+    "Result": "Result"
+  }
