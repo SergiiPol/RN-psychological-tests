@@ -16,6 +16,9 @@
       "eas": {
         "projectId": "8dbcacd9-df91-42fc-8277-9f2890d1f1d1"
       }
+    },
+    "ios": {
+      "bundleIdentifier": "com.anonymous.inmymind"
     }
   }
 }

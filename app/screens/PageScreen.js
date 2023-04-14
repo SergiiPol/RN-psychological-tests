@@ -19,6 +19,16 @@ const App = () => {
     const [selectedLang, setSelectedLang] = useState();
     const [Data, setData] = useState(DataEn);
 
+    const psychoticismKeys = [2, 6, 9, 11, 19, 39, 43, 59, 63, 67, 78, 100, 14, 23, 27, 31, 35, 47, 51, 55, 71, 85, 88, 93, 97];
+    const extraversionIntroversionKeys = [22, 30, 46, 84, 1, 5, 10, 15, 18, 26, 34, 38, 42, 50, 54, 58, 62, 66, 70, 74, 77, 81, 90, 92, 96];
+    const neuroticismKeys = [3, 7, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 75, 79, 83, 86, 89, 94, 98];
+    const sincerityKeys = [4, 8, 17, 25, 29, 41, 45, 49, 53, 57, 65, 69, 76, 80, 82, 91, 95, 13, 21, 33, 37, 61, 73, 87, 99];
+
+    const [psychoticism, setPsychoticism] = useState([0]);
+    const [extraversionIntroversion, setExtraversionIntroversion] = useState([0]);
+    const [neuroticism, setNeuroticism] = useState([0]);
+    const [sincerity, setSincerity] = useState([0]);
+
     const currentLang = async () => {
         let lang = '';
         try {
@@ -51,15 +61,43 @@ const App = () => {
         }
     }, [selectedLang]); 
 
-    const handleAnswer = (pointsToAdd) => {
+    const handleAnswer = (point, currentQuestionId ) => {
+        if (psychoticismKeys.includes(currentQuestionId)) {
+            const newPoints1 = [...psychoticism];
+            newPoints1[currentQuestionId] = point;
+            setPsychoticism(newPoints1);
+        } else if (extraversionIntroversionKeys.includes(currentQuestionId)) {
+            console.log(point, currentQuestionId);
+            const newPoints2 = [...extraversionIntroversion];
+            newPoints2[currentQuestionId] = point;
+            setExtraversionIntroversion(newPoints2);
+        } else if (neuroticismKeys.includes(currentQuestionId)) {
+            const newPoints3 = [...neuroticism];
+            newPoints3[currentQuestionId] = point;
+            setNeuroticism(newPoints3);
+        } else if (sincerityKeys.includes(currentQuestionId)) {
+            const newPoints4 = [...sincerity];
+            newPoints4[currentQuestionId] = point;
+            setSincerity(newPoints4);
+        }
+
         const newPoints = [...points];
-        newPoints[currentIndex] = pointsToAdd;
+        newPoints[currentIndex] = point;
         setPoints(newPoints);
+
         handleNext();
     };
 
     const calculateFinalPoints = () => {
-        return points.reduce((acc, curr) => acc + curr, 0);
+        console.log('extraversionIntroversionKeys  ' + extraversionIntroversion);
+        console.log('res=   ' + extraversionIntroversion.reduce((acc, curr) => acc + curr, 0));
+
+        return [
+            psychoticism.reduce((acc, curr) => acc + curr, 0),
+            extraversionIntroversion.reduce((acc, curr) => acc + curr, 0),
+            neuroticism.reduce((acc, curr) => acc + curr, 0),
+            sincerity.reduce((acc, curr) => acc + curr, 0)
+        ]
     };
 
     const handleSubmit = () => {
@@ -92,7 +130,7 @@ const App = () => {
                     <Button
                         key={option.option}
                         title={option.option}
-                        onPress={() => handleAnswer(option.points)} />
+                        onPress={() => handleAnswer(option.points, currentQuestion.id)} />
                 ))}
                 <View style={{ flexDirection: 'row', backgroundColor: '#ffe4c2' }}>
                     <BackButton onPress={handlePrev} disabled={currentIndex === 0} />

@@ -19,9 +19,9 @@ function App() {
             <View style={styles.container} >
                 <NavigationContainer >
                     <Stack.Navigator initialRouteName="Home">
-                        <Stack.Screen name={t('Home')} component={HomeScreen} />
+                        <Stack.Screen name='Home' component={HomeScreen} />
                         <Stack.Screen name='EPQ-R' component={PageScreen} />
-                        <Stack.Screen name={t('ResultScreen')} component={ResultScreen} />
+                        <Stack.Screen name='ResultScreen' component={ResultScreen} />
                     </Stack.Navigator>
                 </NavigationContainer>
             </View>
