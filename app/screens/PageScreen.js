@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
@@ -8,11 +8,14 @@ import DataRu from '../data/azenk-epq-101-RU';
 import DataEn from '../data/azenk-epq-101-EN';
 import DataEs from '../data/azenk-epq-101-ES';
 import ResultScreen from "./ResultScreen";
-import { LanguageSelect } from '../components/languageSelect';
+import { LanguageSelect } from '../components/LanguageSelect';
 import { useTranslation } from 'react-i18next';
+import themeContext from '../providers/themeContext';
+
+
 
 const App = () => {
-    
+    const theme = useContext(themeContext);
     const navigation = useNavigation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [points, setPoints] = useState([]);
@@ -122,10 +125,10 @@ const App = () => {
     const { t } = useTranslation()
     return (
         <>
-            <LanguageSelect onPress={currentLang} />
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 3 }}>
-                <Text>{t("QuestionNumber")}{currentQuestion.id}</Text>
-                <Text style={{ flexDirection: 'row', fontSize: 20 }}>{currentQuestion.question}</Text>
+            {/* <LanguageSelect onPress={currentLang} /> */}
+            <View style={[styles.container,{backgroundColor: theme.background}] }>
+                <Text style={[{ flexDirection: 'row', fontSize: 28 }, {color: theme.color}]}>{t("QuestionNumber")}{currentQuestion.id}</Text>
+                <Text style={[{ flexDirection: 'row', fontSize: 20 }, {color: theme.color}]}>{currentQuestion.question}</Text>
                 {currentQuestion.options.map(option => (
                     <Button
                         key={option.option}
@@ -152,7 +155,9 @@ const App = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: StatusBar.currentHeight || 0,
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 3,
     },
     item: {
         backgroundColor: '#f9c2ff',
