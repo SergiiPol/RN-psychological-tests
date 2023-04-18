@@ -1,9 +1,14 @@
 {
-    "HomeScreen": "Домашняя страница",
-    "GoToTheTest": "Начать тест",
-    "Language": "Язык:",
-    "Home": "Домашняя страница",
-    "ResultScreen:": "Результат",
-    "QuestionNumber": "Номер вопроса #",
-    "Result": "Рузультат"
+  "HomeScreen": "Домашняя страница",
+  "GoToTheTest": "Начать тест",
+  "Language": "Язык:",
+  "Home": "Домашняя страница",
+  "ResultScreen:": "Результат",
+  "QuestionNumber": "Номер вопроса #",
+  "Result": "Рузультат",
+  "absent": "отсутствует",
+  "neuroticism": "Нейротизм",
+  "psychoticism": "Психотизм",
+  "extraversion": "Экстраверсия",
+  "Lie": "Ложь"
 }

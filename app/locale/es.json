@@ -1,9 +1,10 @@
 {
   "HomeScreen": "Página principal",
   "GoToTheTest": "Iniciar prueba",
-  "Language": "Idioma:", 
+  "Language": "Idioma:",
   "Home": "Página principal",
   "ResultScreen:": "Resultado",
   "QuestionNumber": "Número de pregunta #",
-  "Result": "Resultado"
+  "Result": "Resultado",
+  "absent": "falta"
 }
