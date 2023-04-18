@@ -1,7 +1,7 @@
 export const DataEn =[
     {
       "id": 1,
-      "question": "EN11111111111111",
+      "question": "Do you have many different hobbies?",
       "options": [
         {
           "option": "Yes",
@@ -15,7 +15,7 @@ export const DataEn =[
     },
     {
       "id": 2,
-      "question": "EN2222222222222222222222222222222?",
+      "question": "Вы обдумываете предварительно то, что собираетесь сделать?",
       "options": [
         {
           "option": "Yes",
