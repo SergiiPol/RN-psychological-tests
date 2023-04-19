@@ -13,11 +13,11 @@ const App = ({route}) => {
         // от 6 до 10 - есть склонность к эмоциональной неадекватности
         // от 0 до 5 - отсутствует
         if(resultPoints[0] > 10) {
-            return 'работа с людьми противопоказана'
+            return t('работа с людьми противопоказана');
         } else if (resultPoints[0] <= 5) {
             return t('absent');
         } else if(resultPoints[0] > 6) {
-            return 'есть склонность к эмоциональной неадекватности'
+            return t('есть склонность к эмоциональной неадекватности');
         }
     }
 
@@ -26,11 +26,11 @@ const App = ({route}) => {
         // от 7 до 15 - амбивалентность, неопределённость
         // от 0 до 6 - «чистый» интроверт
         if(resultPoints[1] > 15) {
-            return '\'чистый\' экстраверт';
+            return t('\'чистый\' экстраверт');
         } else if (resultPoints[1] <= 6) {
-            return '\'чистый\' интроверт';
+            return t('\'чистый\' интроверт');
         } else if(resultPoints[1] > 7) {
-            return 'амбивалентность, неопределённость';
+            return t('амбивалентность, неопределённость');
         }
     }
 
@@ -39,29 +39,37 @@ const App = ({route}) => {
         // от 8 до 16 - средний балл
         // от 0 до 7 - эмоциональная устойчивость
         if(resultPoints[2] > 15) {
-            return 'ярко выраженный нейротизм';
+            return t('ярко выраженный нейротизм');
         } else if (resultPoints[2] <= 7) {
-            return 'эмоциональная устойчивость';
+            return t('эмоциональная устойчивость');
         } else if(resultPoints[2] > 7) {
-            return 'средний балл';
+            return t('средний балл');
         }
     }
 
     const sincerity = () => {
         // более 10 - недостоверный результат
         if(resultPoints[3] > 10) {
-            return 'недостоверный результат';
+            return t('недостоверный результат');
         } else if (resultPoints[3] <= 10) {
-            return 'достоверный результат';
+            return t('достоверный результат');
         }
     }
 
     return (
-        <View style={[styles.container,{backgroundColor: theme.background, color: theme.color}]}>
-            <Text style={[styles.item]}>{t('psychoticism')}: {psychoticismResult()}</Text>
-            <Text style={[styles.item]}>{t('extraversionIntroversion')}: {extraversionIntroversion()}</Text>
-            <Text style={[styles.item]}>{t('neuroticism')}: {neuroticism()}</Text>
-            <Text style={[styles.item]}>{t('sincerity')}: {sincerity()}</Text>
+        <View style={[styles.container,{backgroundColor: theme.background}]}>
+            <Text style={[styles.item, {color: theme.color}]}>{t('psychoticism')}:{"\n"}
+                <Text style={[styles.itemChild]}>{psychoticismResult()}</Text>
+            </Text>
+            <Text style={[styles.item, {color: theme.color}]}>{t('extraversionIntroversion')}:{"\n"}
+                <Text style={[styles.itemChild]}>{extraversionIntroversion()}</Text>
+            </Text>
+            <Text style={[styles.item, {color: theme.color}]}>{t('neuroticism')}:{"\n"}
+                <Text style={[styles.itemChild]}>{neuroticism()}</Text>
+            </Text>
+            <Text style={[styles.item, {color: theme.color}]}>{t('sincerity')}:{"\n"}
+                <Text style={[styles.itemChild]}>{sincerity()}</Text>
+            </Text>
         </View>
     );
 };
@@ -69,12 +77,17 @@ const App = ({route}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        padding: 20,
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
     },
     item: {
         flexDirection: 'row',
         fontSize: 20
+    },
+    itemChild: {
+        flexDirection: 'row',
+        fontSize: 14
     }
 });
 

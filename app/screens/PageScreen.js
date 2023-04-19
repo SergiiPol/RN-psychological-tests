@@ -1,10 +1,10 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
 import BackButton from './../components/icons/BackButton';
-import Data from '../data/azenk-epq-101.json';
-import DataRu from '../data/azenk-epq-101-RU';
+// import Data from '../data/azenk-epq-101.json';
+import Data from '../data/azenk-epq-101-RU';
 import ResultScreen from "./ResultScreen";
 import { useTranslation } from 'react-i18next';
 import themeContext from '../providers/themeContext';
@@ -62,7 +62,8 @@ const App = () => {
     // }, [selectedLang]);
 
     const handleAnswer = (point, currentQuestionId) => {
-        const updatedTraits = { ...traits };
+        const updatedTraits = {...traits};
+
         if (psychoticismKeys.includes(currentQuestionId)) {
             updatedTraits.psychoticism[currentQuestionId] = point;
         } else if (extraversionIntroversionKeys.includes(currentQuestionId)) {
@@ -72,6 +73,7 @@ const App = () => {
         } else if (sincerityKeys.includes(currentQuestionId)) {
             updatedTraits.sincerity[currentQuestionId] = point;
         }
+
         setTraits(updatedTraits);
 
         const updatedPoints = [...points];
@@ -92,7 +94,7 @@ const App = () => {
 
     const handleSubmit = () => {
         navigation.navigate('ResultScreen',
-            { resultPoints: calculateFinalPoints() }
+            {resultPoints: calculateFinalPoints()}
         );
     };
 
@@ -110,31 +112,34 @@ const App = () => {
 
     const currentQuestion = Data[currentIndex];
     const { t } = useTranslation()
+
     return (
-        <>
-            <View style={[styles.container,{backgroundColor: theme.background}] }>
-                <Text style={[{ flexDirection: 'row', fontSize: 28 }, {color: theme.color}]}>{t("QuestionNumber")}{currentQuestion.id}</Text>
-                <Text style={[{ flexDirection: 'row', fontSize: 20 }, {color: theme.color}]}>{t(currentQuestion.question)}</Text>
-                {currentQuestion.options.map(option => (
-                    <Button
-                        key={option.option}
-                        title={t(option.option)}
-                        onPress={() => handleAnswer(option.points, currentQuestion.id)} />
-                ))}
-                <View style={{ flexDirection: 'row', backgroundColor: '#ffe4c2' }}>
-                    <BackButton onPress={handlePrev} disabled={currentIndex === 0} />
-                    {/*<Button title="previous question" onPress={handlePrev} disabled={currentIndex === 0} />*/}
-                    {/*<Button title="Вперед" onPress={handleNext} disabled={currentIndex === Data.length - 1} />*/}
-                </View>
-                {points.length === Data.length && (
-                    <View>
-                        <Button
-                            title={t("Result")}
-                            onPress={handleSubmit} />
-                    </View>
-                )}
+        <View style={[styles.container, {backgroundColor: theme.background}]}>
+            <Text style={[{
+                fontSize: 28
+            }, {color: theme.color}]}>{t("QuestionNumber")}{currentQuestion.id}</Text>
+            <Text style={[{
+                fontSize: 20
+            }, {color: theme.color}]}>{t(currentQuestion.question)}</Text>
+            {currentQuestion.options.map(option => (
+                <Button
+                    key={option.option}
+                    title={t(option.option)}
+                    onPress={() => handleAnswer(option.points, currentQuestion.id)}/>
+            ))}
+            <View style={{backgroundColor: '#fa836d' , borderRadius: '100'}}>
+                <BackButton onPress={handlePrev} disabled={currentIndex === 0}/>
+                {/*<Button title="previous question" onPress={handlePrev} disabled={currentIndex === 0} />*/}
+                {/*<Button title="Вперед" onPress={handleNext} disabled={currentIndex === Data.length - 1} />*/}
             </View>
-        </>
+            {points.length === Data.length && (
+                <View>
+                    <Button
+                        title={t("Result")}
+                        onPress={handleSubmit}/>
+                </View>
+            )}
+        </View>
     );
 };
 
@@ -147,7 +152,8 @@ const styles = StyleSheet.create({
     },
     item: {
     },
-    question: {
+    back: {
+
     },
 });
 
