@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { EventRegister } from "react-native-event-listeners";
 import themeContext from "../providers/themeContext";
 import theme from "../constants/theme";
+import ToolBar from '../components/ToolBar'; 
 
  const Stack = createNativeStackNavigator();
 
@@ -28,13 +29,16 @@ function App() {
             <themeContext.Provider value={mode === false ? theme.light : theme.dark }>
                 <NavigationContainer  theme={ mode === true ? DarkTheme : DefaultTheme}>
                     <Stack.Navigator initialRouteName="Home">
-                        <Stack.Screen name='Home' 
+                        <Stack.Screen   name='Home' 
                                         component={HomeScreen}         
                                         options={{
-                                        title: 'My home',
+                                          headerRight: () => <ToolBar />,
+
+                                        title: 'InMyMind',
+                                        // headerTitleAlign: 'center',
                                         headerStyle: {
                                           backgroundColor: '#f4511e',
-                                          justifyContent: 'start',
+                                          justifyContent: 'end',
                                         },
                                         headerTintColor: '#fff',
                                         headerTitleStyle: {
