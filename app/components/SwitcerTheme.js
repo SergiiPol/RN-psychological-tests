@@ -29,13 +29,10 @@ const styles = StyleSheet.create({
     containerWrapper: {
         backgroundColor: '#f4511e',
         flexDirection: "row",
-        justifyContent: "flex-end",
-        alignSelf: "flex-end",
         height: 55,
         width: 75,
-        borderRightWidth: 1,
-        borderRightColor: "grey",
         borderRadius: 5,
+        marginLeft: 20
     },
     container: {
       flex: 1,

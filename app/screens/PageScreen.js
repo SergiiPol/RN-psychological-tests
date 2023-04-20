@@ -3,8 +3,8 @@ import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
 import BackButton from './../components/icons/BackButton';
-// import Data from '../data/azenk-epq-101.json';
-import Data from '../data/azenk-epq-101-RU';
+import Data from '../data/azenk-epq-101.json';
+// import Data from '../data/azenk-epq-101-RU';
 import ResultScreen from "./ResultScreen";
 import { useTranslation } from 'react-i18next';
 import themeContext from '../providers/themeContext';
@@ -127,7 +127,7 @@ const App = () => {
                     title={t(option.option)}
                     onPress={() => handleAnswer(option.points, currentQuestion.id)}/>
             ))}
-            <View style={{backgroundColor: '#fa836d' , borderRadius: '100'}}>
+            <View style={{backgroundColor: '#fa836d' , borderRadius: 50}}>
                 <BackButton onPress={handlePrev} disabled={currentIndex === 0}/>
                 {/*<Button title="previous question" onPress={handlePrev} disabled={currentIndex === 0} />*/}
                 {/*<Button title="Вперед" onPress={handleNext} disabled={currentIndex === Data.length - 1} />*/}
