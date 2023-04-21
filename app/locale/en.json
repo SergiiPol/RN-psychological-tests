@@ -120,6 +120,17 @@
   "ярко выраженный нейротизм": "Strongly expressed neuroticism",
   "эмоциональная устойчивость": "Emotional stability",
   "средний балл": "Average score",
-  "достоверный результат": "Average score",
-  "недостоверный результат": "Average score"
+  "M": "Melancholic - restrained, pessimistic, sober, rigid.",
+  "Ф": "Phlegmatic - reliable, self-controlled, peaceful, prudent.",
+  "ФМ": "Phlegmatic-melancholic type - diligent, passive, introverted, quiet, not sociable.",
+  "X": "Choleric - aggressive, impulsive, changing views, quick-tempered.",
+  "ХС": "Choleric-sanguine type - optimistic, active, extroverted, sociable, approachable.",
+  "С": "Sanguine - talkative, quick-reacting, easy-going, lively.",
+  "СФ": "Sanguine-phlegmatic type - carefree, leading, stable, calm, balanced.",
+  "MX": "Melancholic-choleric type - conscientious, capricious, neurotic, sensitive, restless.",
+  "Н": "Normal type",
+  "type": "Personality type",
+  "неопеределено": "undefined",
+  "достоверный результат": "reliable result",
+  "недостоверный результат": "unreliable result"
 }

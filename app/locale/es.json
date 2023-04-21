@@ -119,5 +119,18 @@
   "амбивалентность, неопределённость": "Ambivalencia, incertidumbre",
   "ярко выраженный нейротизм": "Neuroticismo fuertemente expresado",
   "эмоциональная устойчивость": "Estabilidad emocional",
-  "средний балл": "Puntuación media"
+  "средний балл": "Puntuación media",
+  "M": "Melancólico - reservado, pesimista, sobrio, rígido.",
+  "Ф": "Flemático - confiable, con control propio, pacífico, reflexivo.",
+  "ФМ": "Tipo flemático-melancólico - diligente, pasivo, introvertido, tranquilo, no sociable.",
+  "X": "Colérico - agresivo, impulsivo, cambia sus opiniones con facilidad.",
+  "ХС": "Tipo colérico-sanguíneo - optimista, activo, extravertido, sociable, accesible.",
+  "С": "Sanguíneo - locuaz, de reacciones rápidas, relajado, animado.",
+  "СФ": "Tipo sanguíneo-flemático - despreocupado, líder, estable, tranquilo, equilibrado.",
+  "MX": "Tipo melancólico-colérico - diligente, caprichoso, neurótico, susceptible, inquieto.",
+  "Н": "Tipo normal ",
+  "type": "Tipo de personalidad",
+  "неопеределено": "no definido",
+  "достоверный результат": "resultado confiable",
+  "недостоверный результат": "resultado no confiable"
 }
