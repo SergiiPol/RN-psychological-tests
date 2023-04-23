@@ -1,19 +1,18 @@
 import React, {useContext} from 'react';
-import {Button, Text, View, StyleSheet} from 'react-native';
+import {Button, Text, View, StyleSheet, Image} from 'react-native';
 import { useTranslation } from 'react-i18next';
 import themeContext from '../providers/themeContext';
-
 
 const App = ({navigation}) => {
     const theme = useContext(themeContext);
     const { t } = useTranslation(); 
     
     return (
-        <View style={[styles.containerToolBar, {backgroundColor: theme.background}]}>
-            <Text style={[styles.text, {color: theme.color}]}>{t('HomeScreen')}</Text>
-            <Button
-                title={t('GoToTheTest')}
-                onPress={() => navigation.navigate('EPQ-R')} />
+        <View style={[styles.containerToolBar, { backgroundColor: theme.background }]}>
+          <Text style={[styles.text, { color: theme.color }]}>{t('HomeScreen')}</Text>
+          <Button
+            title={t('GoToTheTest')}
+            onPress={() => navigation.navigate('EPQ-R')} />
         </View>
     );
 };

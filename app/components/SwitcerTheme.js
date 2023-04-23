@@ -1,56 +1,64 @@
-import React, { useState, useContext } from 'react';
-import { Switch, View, StyleSheet, Image } from 'react-native';
+import React, { useState, useContext, useEffect } from 'react';
+import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
 import { EventRegister } from 'react-native-event-listeners';
 import themeContext from '../providers/themeContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { FontAwesome } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+
 
 const SwitcherTheme = () => {
     const [mode, setMode] = useState(true);
     const theme = useContext(themeContext);
 
+    useEffect(() => {
+        AsyncStorage.getItem('mode')
+          .then((value) => {
+            if (value !== null) {
+              const mode = JSON.parse(value);
+              setMode(mode);
+            }
+          });
+    }, []);
+      
+    const onModeChange = () => {
+        const newMode = !mode;
+        AsyncStorage.setItem('mode', JSON.stringify(newMode));
+        EventRegister.emit("changeTheme", newMode);
+        setMode(newMode);
+    };
+       
+
     return (
-        <View style={[styles.containerWrapper, {backgroundColor: theme.background}]}>
-            <View style={[styles.container, {backgroundColor: theme.background}]}>
-                <Image
-                    style={styles.stretch}
-                    source={require("./icons/theme-light-dark.png")}
-                />
-            </View>
-            <Switch
-                style={[styles.switch, {backgroundColor: theme.background}]}
-                value={mode}
-                onValueChange={() => {
-                    setMode((value) => !value);
-                    EventRegister.emit("changeTheme", mode);
-                } } />
-        </View>
+        <TouchableOpacity
+            style={[styles.containerWrapper, {backgroundColor: theme.background}]}
+            onPress={onModeChange}
+        >
+            <Text>Toggle theme</Text> 
+            <Text style={[styles.buttonText, {backgroundColor: theme.background}]}>
+                {mode ? <Feather name="sun" size={24} color="black" /> 
+                      : <FontAwesome name="moon-o" size={24} color="black"/> }
+            </Text>
+        </TouchableOpacity>
     );
 };
+
 const styles = StyleSheet.create({
     containerWrapper: {
-        backgroundColor: '#f4511e',
         flexDirection: "row",
-        height: 55,
-        width: 75,
+        height: 50,
+        width: 150,
         borderRadius: 5,
-        marginLeft: 20
+        marginLeft: 0,
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: 5
     },
-    container: {
-      flex: 1,
-      width: 30,
-      height: 30,
-      alignSelf: "center",
-      backgroundColor: '#f4511e',
-    },
-    stretch: {
-      width: 30,
-      height: 30,
-    },
-    switch: {
-        flex: 1, 
-        height: 55, 
-        width: 30, 
-        backgroundColor: '#f4511e'
+    buttonText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: "bold",
     }
-  });
+});
 
 export default SwitcherTheme;

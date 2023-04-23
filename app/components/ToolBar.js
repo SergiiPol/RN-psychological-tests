@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { View, StyleSheet, Modal, TouchableOpacity } from 'react-native';
-import { LanguageSelect } from './LanguageSelect';
+import {LanguageSelect} from './languageSelect';
 import SwitcherTheme from './SwitcerTheme';
 import themeContext from '../providers/themeContext';
-import { Ionicons } from '@expo/vector-icons';
+import { AntDesign, Ionicons } from '@expo/vector-icons'; 
+import ReturnFlag from '../components/ReturnFlag';
+
 
 const ToolBar = () => {
   const theme = useContext(themeContext);
@@ -19,8 +21,10 @@ const ToolBar = () => {
         onPress={() => {
           setModalVisible(true);
         }}
+        style={{ flexDirection: 'row', alignItems: 'center' }}
       >
-        <Ionicons style={styles.burgers} name="menu" size={32} color="white" />
+            <ReturnFlag style={styles.flagIcon}/>
+            <AntDesign style={styles.settingIcon} name="setting" size={24} color="#0a0857" />
       </TouchableOpacity>
       <Modal
         animationType='fade'
@@ -33,7 +37,7 @@ const ToolBar = () => {
         <View style={styles.modalWrapper}>
           <View style={[styles.modalContainer, {backgroundColor: theme.background}]}>
             <TouchableOpacity onPress={closeModal} style={styles.closeButton}>
-              <Ionicons name="close" size={36} color="white" />
+              <Ionicons name="close" size={24} color="white" />
             </TouchableOpacity>
             <LanguageSelect style={styles.languageSelect} />
             <SwitcherTheme style={styles.switcherTheme} />
@@ -49,13 +53,18 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#f4511e',
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-around',
     alignSelf: 'flex-end',
     height: 55,
     width: '30%',
   },
-  burgers: {
-    marginTop: 10,
+  flagIcon:{
+    display: 'flex',
+    marginLeft: 20,
+  },
+  settingIcon: {
+    display: 'flex',
+    marginLeft: 20,
   },
   modalWrapper: {
     flex: 1,
@@ -65,7 +74,7 @@ const styles = StyleSheet.create({
   modalContainer: {
     position: 'absolute',
     right: 0,
-    top: 200,
+    top: 0,
     width: 180,
     height: 200,
     backgroundColor: '#f4511e',

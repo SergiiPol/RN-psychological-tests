@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import { useTranslation } from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import themeContext from '../providers/themeContext';
+import FlagEn from './icons/FlagEn';
 
 
 export const LanguageSelect = () => {
@@ -17,7 +18,6 @@ export const LanguageSelect = () => {
     i18n.changeLanguage(itemValue);
     try {
       await AsyncStorage.setItem('language', itemValue);
-      console.log(lang);
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +60,8 @@ const styles = StyleSheet.create({
       marginTop: 0, 
       backgroundColor: '#f4511e',
       borderLeftWidth: 1,
-      borderLeftColor: "red",
       borderRadius: 5,
   },
 });
+
+

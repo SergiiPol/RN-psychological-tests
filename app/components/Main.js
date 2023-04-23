@@ -40,7 +40,7 @@ function App() {
                                           backgroundColor: '#f4511e',
                                           justifyContent: 'end',
                                         },
-                                        headerTintColor: '#fff',
+                                        headerTintColor: '#0a0857',
                                         headerTitleStyle: {
                                           fontWeight: 'bold',
                                         },
@@ -55,7 +55,7 @@ function App() {
                                               justifyContent: 'flex-end',
                                               
                                             },
-                                            headerTintColor: '#fff',
+                                            headerTintColor: '#0a0857',
                                             headerTitleStyle: {
                                               fontWeight: 'bold',
                                             },
@@ -69,7 +69,7 @@ function App() {
                                               backgroundColor: '#f4511e',
                                               justifyContent: 'start',
                                             },
-                                            headerTintColor: '#fff',
+                                            headerTintColor: '#0a0857',
                                             headerTitleStyle: {
                                               fontWeight: 'bold',
                                             },
