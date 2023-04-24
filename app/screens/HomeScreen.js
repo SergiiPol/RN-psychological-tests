@@ -13,6 +13,9 @@ const App = ({navigation}) => {
           <Button
             title={t('GoToTheTest')}
             onPress={() => navigation.navigate('EPQ-R')} />
+            <Button
+                title={t('geography')}
+                onPress={() => navigation.navigate('geography')} />
         </View>
     );
 };
