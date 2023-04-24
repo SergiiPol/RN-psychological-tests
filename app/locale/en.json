@@ -132,5 +132,8 @@
   "type": "Personality type",
   "неопеределено": "undefined",
   "достоверный результат": "reliable result",
-  "недостоверный результат": "unreliable result"
+  "недостоверный результат": "unreliable result",
+  "azenk-pre-start-message": "You are asked to answer questions related to your typical behavior. Try to imagine typical situations and give the first 'natural' answer that comes to mind. Answer quickly and accurately. Remember that there are no 'good' or 'bad' answers.",
+  "azenk-pre-start-message-time": "Approximate time to complete: 30 minutes",
+  "Close": "Close"
 }

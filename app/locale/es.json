@@ -132,5 +132,8 @@
   "type": "Tipo de personalidad",
   "неопеределено": "no definido",
   "достоверный результат": "resultado confiable",
-  "недостоверный результат": "resultado no confiable"
+  "недостоверный результат": "resultado no confiable",
+  "azenk-pre-start-message": "Se le pide que responda preguntas relacionadas con su comportamiento típico. Trate de imaginar situaciones típicas y dé la primera respuesta 'natural' que venga a su mente. Responda rápidamente y con precisión. Recuerde que no hay respuestas 'buenas' o 'malas'.",
+  "azenk-pre-start-message-time": "Tiempo aproximado para completar: 30 minutos",
+  "Close": "Сerca"
 }

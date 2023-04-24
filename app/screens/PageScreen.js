@@ -1,21 +1,20 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
+import {Button, StatusBar, StyleSheet, Text, View, ViewBase} from 'react-native';
 import BackButton from './../components/icons/BackButton';
 import Data from '../data/azenk-epq-101.json';
 // import Data from '../data/azenk-epq-101-RU';
 import ResultScreen from "./ResultScreen";
 import { useTranslation } from 'react-i18next';
 import themeContext from '../providers/themeContext';
+import PreStartMessage from "../components/PreStartMessage";
 
 const App = () => {
     const theme = useContext(themeContext);
     const navigation = useNavigation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [points, setPoints] = useState([]);
-    // const [selectedLang, setSelectedLang] = useState();
-    // const [Data, setData] = useState(Data);
 
     const psychoticismKeys = [2, 6, 9, 11, 19, 39, 43, 59, 63, 67, 78, 100, 14, 23, 27, 31, 35, 47, 51, 55, 71, 85, 88, 93, 97];
     const extraversionIntroversionKeys = [22, 30, 46, 84, 1, 5, 10, 15, 18, 26, 34, 38, 42, 50, 54, 58, 62, 66, 70, 74, 77, 81, 90, 92, 96];
@@ -28,38 +27,6 @@ const App = () => {
         neuroticism: {},
         sincerity: {}
     });
-
-    // const currentLang = async () => {
-    //     let lang = '';
-    //     try {
-    //       lang = await AsyncStorage.getItem('language') || 'none';
-    //       setSelectedLang(lang);
-    //     } catch (error) {
-    //       console.log(error.message);
-    //     }
-    //     return lang;
-    //   }
-    //   currentLang();
-
-    
-    // useEffect(() => {
-    //     if (selectedLang) {
-    //         switch (selectedLang) {
-    //             case "ru":
-    //                 setData(DataRu);
-    //                 break;
-    //             case "en":
-    //                 setData(DataEn);
-    //                 break;
-    //             case "es":
-    //                 setData(DataEs);
-    //                 break;
-    //             default:
-    //                 setData(DataEn);
-    //                 break;
-    //         }
-    //     }
-    // }, [selectedLang]);
 
     const handleAnswer = (point, currentQuestionId) => {
         const updatedTraits = {...traits};
@@ -114,8 +81,9 @@ const App = () => {
     const { t } = useTranslation()
 
     return (
-        <View style={[styles.container, {backgroundColor: theme.background}]}>
-            <Text style={[{
+    <View style={[styles.container, {backgroundColor: theme.background}]}>
+        <PreStartMessage style={{ justifyContent: 'start', alignItems: 'start' , padding: 5}} />
+        <Text style={[{
                 fontSize: 28
             }, {color: theme.color}]}>{t("QuestionNumber")}{currentQuestion.id}</Text>
             <Text style={[{
@@ -128,9 +96,11 @@ const App = () => {
                     onPress={() => handleAnswer(option.points, currentQuestion.id)}/>
             ))}
             <View style={{backgroundColor: '#fa836d' , borderRadius: 50}}>
-                <BackButton onPress={handlePrev} disabled={currentIndex === 0}/>
-                {/*<Button title="previous question" onPress={handlePrev} disabled={currentIndex === 0} />*/}
-                {/*<Button title="Вперед" onPress={handleNext} disabled={currentIndex === Data.length - 1} />*/}
+                {currentIndex !== 0 && (
+                    <View>
+                        <BackButton onPress={handlePrev} disabled={currentIndex === 0}/>
+                    </View>
+                )}
             </View>
             {points.length === Data.length && (
                 <View>
