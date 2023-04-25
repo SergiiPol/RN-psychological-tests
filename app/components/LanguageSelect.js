@@ -4,7 +4,6 @@ import {Picker} from '@react-native-picker/picker';
 import { useTranslation } from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import themeContext from '../providers/themeContext';
-import FlagEn from './icons/FlagEn';
 
 
 export const LanguageSelect = () => {
