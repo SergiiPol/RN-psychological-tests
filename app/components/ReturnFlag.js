@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import { View, Image, Text, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import FlagEn from './icons/FlagEn';
-import FlagRu from './icons/FlagRu';
-import FlagEs from './icons/FlagEs';
 
-
+AsyncStorage.clear();
 
 export default function ReturnFlag() {
-    const [selectedLang, setSelectedLang] = useState();
-    const [Flag, setFlag] = useState(FlagEn);
-
+  const FlagRu = <Image source={require("./icons/ru_flag_24.png")} />;
+  const FlagEs = <Image source={require("./icons/es_flag_24.png")} />;
+  const FlagEn = <Image source={require("./icons/en_flag_24.png")} />;
+  const [selectedLang, setSelectedLang] = useState();
+  const [Flag, setFlag] = useState(FlagEn);
+    
     const currentLang = async () => {
          let lang = '';
          try {
