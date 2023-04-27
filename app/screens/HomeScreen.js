@@ -10,9 +10,9 @@ const App = ({navigation}) => {
     return (
         <View style={[styles.containerToolBar, { backgroundColor: theme.background }]}>
           <Text style={[styles.text, { color: theme.color }]}>{t('HomeScreen')}</Text>
-          <Button
-            title={t('GoToTheTest')}
-            onPress={() => navigation.navigate('EPQ-R')} />
+            <Button
+              title={t('GoToTheTest')}
+              onPress={() => navigation.navigate('EPQ-R')} />
             <Button
                 title={t('geography')}
                 onPress={() => navigation.navigate('geography')} />
