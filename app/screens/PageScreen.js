@@ -120,11 +120,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 3,
     },
-    item: {
-    },
-    back: {
-
-    },
 });
 
 export default App;

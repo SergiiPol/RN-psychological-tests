@@ -33,7 +33,6 @@ function App() {
                                   component={HomeScreen}
                                   options={{
                                       headerRight: () => <ToolBar/>,
-
                                       title: 'InMyMind',
                                       // headerTitleAlign: 'center',
                                       headerStyle: {

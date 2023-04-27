@@ -5,11 +5,13 @@ import themeContext from '../providers/themeContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FontAwesome } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 
 const SwitcherTheme = () => {
-    const [mode, setMode] = useState(true);
+    const [mode, setMode] = useState(false);
     const theme = useContext(themeContext);
+    const { t } = useTranslation(); 
 
     useEffect(() => {
         AsyncStorage.getItem('mode')
@@ -34,7 +36,7 @@ const SwitcherTheme = () => {
             style={[styles.containerWrapper, {backgroundColor: theme.background}]}
             onPress={onModeChange}
         >
-            <Text>Toggle theme</Text> 
+            <Text>{t('ToggleTheme')}</Text> 
             <Text style={[styles.buttonText, {backgroundColor: theme.background}]}>
                 {mode ? <Feather name="sun" size={24} color="black" /> 
                       : <FontAwesome name="moon-o" size={24} color="black"/> }
