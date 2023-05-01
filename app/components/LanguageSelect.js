@@ -4,6 +4,7 @@ import {Picker} from '@react-native-picker/picker';
 import { useTranslation } from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import themeContext from '../providers/themeContext';
+import {NativeModules, Platform} from 'react-native';
 
 
 export const LanguageSelect = () => {
@@ -23,7 +24,7 @@ export const LanguageSelect = () => {
   };
 
   const loadLanguageFromStorage = async () => {
-    try {
+    try {  
       const value = await AsyncStorage.getItem('language');
       if (value !== null) {
         setSelectedValue(value);

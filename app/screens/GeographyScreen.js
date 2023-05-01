@@ -1,11 +1,12 @@
 import React, {useContext, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Button, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import BackButton from './../components/icons/BackButton';
 import Data from '../data/geography-10.json';
 import ResultScreen from "./ResultScreen";
 import {useTranslation} from 'react-i18next';
 import themeContext from '../providers/themeContext';
+import ProgressBar from '../components/progressBar';
 
 const App = () => {
     const theme = useContext(themeContext);
@@ -49,6 +50,7 @@ const App = () => {
 
     return (
         <View style={[styles.container, {backgroundColor: theme.background}]}>
+            <ProgressBar value={currentIndex} max={Data.length} />
             <Text style={[{
                 fontSize: 28
             }, {color: theme.color}]}>{t("QuestionNumber")}{currentQuestion.id}</Text>
@@ -56,11 +58,13 @@ const App = () => {
                 fontSize: 20
             }, {color: theme.color}]}>{t(currentQuestion.question)}</Text>
             {currentQuestion.options.map(option => (
-                <Button
-                    key={option.option}
-                    title={t(option.option)}
-                    onPress={() => handleAnswer(option.points, currentQuestion.id)}/>
-            ))}
+                    <TouchableOpacity onPress={()=>  handleAnswer(option.points, currentQuestion.id)}
+                                      key={option.option}>
+                      <View style={styles.buttonAnswer}>
+                          <Text style={styles.textButtonAnswer}>{t(option.option)}</Text>
+                      </View>
+                    </TouchableOpacity>
+                ))}
             <View style={{backgroundColor: '#fa836d', borderRadius: 50}}>
                 {currentIndex !== 0 && (
                     <View>
@@ -70,9 +74,11 @@ const App = () => {
             </View>
             {points.length === Data.length && (
                 <View>
-                    <Button
-                        title={t("Result")}
-                        onPress={handleSubmit}/>
+                    <TouchableOpacity onPress={handleSubmit}>
+                        <View style={styles.button}>
+                           <Text style={styles.textButtonAnswer}>{t("Result")}</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
             )}
         </View>
@@ -86,8 +92,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 3,
     },
-    item: {},
-    back: {},
+    textButtonAnswer: {
+        fontSize: 20,
+        color: '#fffc',
+        marginTop: 10,
+    },
 });
 
 export default App;

@@ -36,10 +36,9 @@ function App() {
                                       title: 'InMyMind',
                                       // headerTitleAlign: 'center',
                                       headerStyle: {
-                                          backgroundColor: '#f4511e',
-                                          justifyContent: 'end',
+                                          backgroundColor: '#D5AA72',
                                       },
-                                      headerTintColor: '#0a0857',
+                                      headerTintColor: '#562B1A',
                                       headerTitleStyle: {
                                           fontWeight: 'bold',
                                       },
@@ -50,11 +49,9 @@ function App() {
                                   options={{
                                       title: 'EPQ-R',
                                       headerStyle: {
-                                          backgroundColor: '#f4511e',
-                                          justifyContent: 'flex-end',
-
+                                          backgroundColor: '#D5AA72',
                                       },
-                                      headerTintColor: '#0a0857',
+                                      headerTintColor: '#562B1A',
                                       headerTitleStyle: {
                                           fontWeight: 'bold',
                                       },
@@ -65,7 +62,7 @@ function App() {
                                   options={{
                                       title: 'geography',
                                       headerStyle: {
-                                          backgroundColor: '#f4511e',
+                                          backgroundColor: '#D5AA72',
                                           justifyContent: 'flex-end',
 
                                       },
@@ -80,7 +77,7 @@ function App() {
                                   options={{
                                       title: 'ResultScreen',
                                       headerStyle: {
-                                          backgroundColor: '#f4511e',
+                                          backgroundColor: '#D5AA72',
                                           justifyContent: 'start',
                                       },
                                       headerTintColor: '#0a0857',

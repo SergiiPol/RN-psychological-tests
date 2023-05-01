@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Button, Text, View, StyleSheet, Image} from 'react-native';
+import {Button, Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import { useTranslation } from 'react-i18next';
 import themeContext from '../providers/themeContext';
 
@@ -10,12 +10,16 @@ const App = ({navigation}) => {
     return (
         <View style={[styles.containerToolBar, { backgroundColor: theme.background }]}>
           <Text style={[styles.text, { color: theme.color }]}>{t('HomeScreen')}</Text>
-            <Button
-              title={t('GoToTheTest')}
-              onPress={() => navigation.navigate('EPQ-R')} />
-            <Button
-                title={t('geography')}
-                onPress={() => navigation.navigate('geography')} />
+          <TouchableOpacity onPress={()=> navigation.navigate('EPQ-R')}>
+            <View style={styles.button}>
+             <Text style={styles.textButton}>{t('GoToTheTest')}</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.navigate('geography')}>
+            <View style={styles.button}>
+             <Text style={styles.textButton}>{t('geography')}</Text>
+            </View>
+          </TouchableOpacity>
         </View>
     );
 };
@@ -31,6 +35,17 @@ const styles = StyleSheet.create({
     display: "flex",
     alignSelf: "center",
     fontSize: 30,
+  },
+  button: {
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textButton:{
+    fontSize: 32,
+    fontWeight: '700',
+    color: '#fffc',
+    
   }
 })
 
