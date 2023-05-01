@@ -1,10 +1,10 @@
 {
   "HomeScreen": "Home Screen",
-  "GoToTheTest": "Go to the test",
+  "GoToTheTest": "GO TO THE TEST",
   "Language": "Language:",
   "Home": "Home",
   "ResultScreen": "Result",
-  "QuestionNumber": "Question number #",
+  "QuestionNumber": "Question number ",
   "Result": "Result",
   "Да": "Yes",
   "Нет": "No",
@@ -136,5 +136,5 @@
   "недостоверный результат": "unreliable result",
   "azenk-pre-start-message": "You are asked to answer questions related to your typical behavior. Try to imagine typical situations and give the first 'natural' answer that comes to mind. Answer quickly and accurately. Remember that there are no 'good' or 'bad' answers.",
   "azenk-pre-start-message-time": "Approximate time to complete: 30 minutes",
-  "Close": "Close"
+  "Close": "CLOSE"
 }

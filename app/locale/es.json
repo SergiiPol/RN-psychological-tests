@@ -4,7 +4,7 @@
   "Language": "Idioma:",
   "Home": "Página principal",
   "ResultScreen:": "Resultado",
-  "QuestionNumber": "Número de pregunta #",
+  "QuestionNumber": "Número de pregunta ",
   "Result": "Resultado",
   "absent": "falta",
   "Да": "Si",
@@ -13,7 +13,7 @@
   "psychoticism": "Psicoticismo",
   "extraversion": "Extraversión",
   "sincerity": "Sinceridad",
-  "ToggleTheme": "Cambiar thema",
+  "ToggleTheme": "Cambiar de thema",
   "У Вас много различных хобби?": "¿Tienes muchos pasatiempos diferentes?",
   "Вы обдумываете предварительно то, что собираетесь сделать?": "¿Piensas de antemano en lo que vas a hacer?",
   "У Вас часто бывают спады и подъемы настроения?": "¿Tienes cambios de humor frecuentes?",
@@ -136,5 +136,5 @@
   "недостоверный результат": "resultado no confiable",
   "azenk-pre-start-message": "Se le pide que responda preguntas relacionadas con su comportamiento típico. Trate de imaginar situaciones típicas y dé la primera respuesta 'natural' que venga a su mente. Responda rápidamente y con precisión. Recuerde que no hay respuestas 'buenas' o 'malas'.",
   "azenk-pre-start-message-time": "Tiempo aproximado para completar: 30 minutos",
-  "Close": "Сerca"
+  "Close": "СERRAR"
 }

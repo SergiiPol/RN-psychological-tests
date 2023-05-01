@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Button, StatusBar, StyleSheet, Text, View, ViewBase} from 'react-native';
+import {Button, StatusBar, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import BackButton from './../components/icons/BackButton';
 import Data from '../data/azenk-epq-101.json';
 // import Data from '../data/azenk-epq-101-RU';
@@ -9,6 +9,7 @@ import ResultScreen from "./ResultScreen";
 import { useTranslation } from 'react-i18next';
 import themeContext from '../providers/themeContext';
 import PreStartMessage from "../components/PreStartMessage";
+import ProgressBar from '../components/progressBar';
 
 const App = () => {
     const theme = useContext(themeContext);
@@ -46,8 +47,9 @@ const App = () => {
         const updatedPoints = [...points];
         updatedPoints[currentIndex] = point;
         setPoints(updatedPoints);
-
+        
         handleNext();
+
     };
 
     const calculateFinalPoints = () => {
@@ -66,7 +68,7 @@ const App = () => {
     };
 
     const handleNext = () => {
-        if (currentIndex < Data.length - 1) {
+        if (currentIndex < Data.length-1) {
             setCurrentIndex(currentIndex + 1);
         }
     };
@@ -81,34 +83,39 @@ const App = () => {
     const { t } = useTranslation()
 
     return (
-    <View style={[styles.container, {backgroundColor: theme.background}]}>
-        <PreStartMessage style={{ justifyContent: 'start', alignItems: 'start' , padding: 5}} />
-        <Text style={[{
-                fontSize: 28
-            }, {color: theme.color}]}>{t("QuestionNumber")}{currentQuestion.id}</Text>
-            <Text style={[{
-                fontSize: 20
-            }, {color: theme.color}]}>{t(currentQuestion.question)}</Text>
-            {currentQuestion.options.map(option => (
-                <Button
-                    key={option.option}
-                    title={t(option.option)}
-                    onPress={() => handleAnswer(option.points, currentQuestion.id)}/>
-            ))}
-            <View style={{backgroundColor: '#fa836d' , borderRadius: 50}}>
-                {currentIndex !== 0 && (
-                    <View>
-                        <BackButton onPress={handlePrev} disabled={currentIndex === 0}/>
+        <View style={[styles.container, {backgroundColor: theme.background}]}>
+            <ProgressBar value={currentIndex} max={Data.length} />
+            <PreStartMessage style={{ justifyContent: 'start', alignItems: 'start' , padding: 5}} />
+            {/* <Text style={[styles.textQuestion, {color: theme.color}]}>{t("QuestionNumber")}{currentQuestion.id}
+            </Text> */}
+            <Text style={[styles.textCurrentQuestion, {color: theme.color}]}>{t(currentQuestion.question)}
+            </Text>
+            <View style={styles.wrapperButtonAnswer}>
+                {currentQuestion.options.map(option => (
+                                <TouchableOpacity onPress={()=>  handleAnswer(option.points, currentQuestion.id)}
+                                                  key={option.option}>
+                                    <View style={styles.buttonAnswer}>
+                                        <Text style={styles.textButtonAnswer}>{t(option.option)}</Text>
+                                    </View>
+                                </TouchableOpacity>
+                ))}
+            </View>
+            <View style={styles.buttonBack}>
+                    {currentIndex !== 0 && (
+                        <View>
+                            <BackButton onPress={handlePrev} disabled={currentIndex === 0}/>
+                        </View>
+                    )}
+            </View>
+                {points.length === Data.length && (
+                    <View style={styles.buttonResult}>
+                                  <TouchableOpacity onPress={handleSubmit}>
+                                      <View style={styles.button}>
+                                         <Text style={styles.textButtonAnswer}>{t("Result")}</Text>
+                                      </View>
+                                  </TouchableOpacity>
                     </View>
                 )}
-            </View>
-            {points.length === Data.length && (
-                <View>
-                    <Button
-                        title={t("Result")}
-                        onPress={handleSubmit}/>
-                </View>
-            )}
         </View>
     );
 };
@@ -117,9 +124,50 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
+        // justifyContent: 'space-around',
         padding: 3,
     },
+    wrapperButtonAnswer: {
+        flex: 0.125,
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        gap: 40,
+    },
+    buttonAnswer: {
+
+    },
+    textButtonAnswer: {
+        fontSize: 32,
+        color: '#d9f5c1',
+    },
+    buttonResult: {
+        flex: 0.1,
+        justifyContent: 'center',
+        marginTop: 10,
+    },
+    buttonBack: {
+        flex: 0.04,
+        backgroundColor: '#fffc' ,
+        borderRadius: 50,
+        marginTop:10,
+    },
+    textQuestion: {
+        flex: 0.1,
+        fontSize: 26,
+        textAlignVertical: 'center',
+        borderBottomWidth: 1,
+        borderBottomColor: '#fff'
+    },
+    textCurrentQuestion: {
+        flex: 0.35,
+        fontSize: 24,
+        textAlign: 'center',
+        textAlignVertical: 'center',
+        padding: 15,
+        borderBottomWidth: 1,
+        borderBottomColor: '#fff'
+    }
 });
 
 export default App;

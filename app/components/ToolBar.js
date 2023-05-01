@@ -24,7 +24,7 @@ const ToolBar = () => {
         style={{ flexDirection: 'row', alignItems: 'center' }}
       >
             <ReturnFlag style={styles.flagIcon}/>
-            <AntDesign style={styles.settingIcon} name="setting" size={24} color="#0a0857" />
+            <AntDesign style={styles.settingIcon} name="setting" size={24} color="#562B1A" />
       </TouchableOpacity>
       <Modal
         animationType='fade'
@@ -51,7 +51,7 @@ const ToolBar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f4511e',
+    backgroundColor: '#D5AA72',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignSelf: 'flex-end',
@@ -75,9 +75,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     top: 0,
-    width: 180,
+    width: 210,
     height: 200,
-    backgroundColor: '#f4511e',
+    backgroundColor: '#D5AA72',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     paddingTop: 50,
