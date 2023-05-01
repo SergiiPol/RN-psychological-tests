@@ -40,6 +40,17 @@ const loadLanguageFromStorage = async () => {
   }
 }; 
 loadLanguageFromStorage();
+
+async function removeMode() {
+  try {
+    await AsyncStorage.removeItem('mode');
+    console.log('mode removed successfully.');
+  } catch (error) {
+    console.log('Error removing mode: ', error);
+  }
+} 
+removeMode();
+
 const resources = {
   en: {
     translation: en,
