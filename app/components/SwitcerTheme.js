@@ -11,8 +11,8 @@ import { useTranslation } from 'react-i18next';
 const SwitcherTheme = () => {
     const [mode, setMode] = useState(false);
     const theme = useContext(themeContext);
-    const { t } = useTranslation(); 
-
+    const { t } = useTranslation();
+    
     useEffect(() => {
         AsyncStorage.getItem('mode')
           .then((value) => {
