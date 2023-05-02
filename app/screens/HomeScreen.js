@@ -20,6 +20,11 @@ const App = ({navigation}) => {
              <Text style={styles.textButton}>{t('geography')}</Text>
             </View>
           </TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.navigate('Zodiac Match')}>
+            <View style={styles.buttonZodiac}>
+             <Text style={styles.textButtonZodiac}>{t('ZodiacMatch')}</Text>
+            </View>
+          </TouchableOpacity>
         </View>
     );
 };
@@ -30,6 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    gap: 15,
   },
   text:{
     display: "flex",
@@ -40,12 +46,26 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: 'center',
     alignItems: 'center',
+    borderBottomWidth: 2,
+    borderColor: '#CB8A58',
+  },
+  buttonZodiac:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderBottomWidth: 2,
+    borderColor: '#CB8A58',
   },
   textButton:{
     fontSize: 32,
     fontWeight: '700',
-    color: '#fffc',
-    
+    color: '#F2F2EF',
+  },
+  textButtonZodiac:{
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#F2F2EF',
+    textAlignVertical: 'center',
+    textAlign: 'center'
   }
 })
 
