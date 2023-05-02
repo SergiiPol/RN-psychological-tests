@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         height: 55,
         width: '30%',
-        marginTop: 20,
+        marginTop: 0,
     },
     modalWrapper: {
         flex: 1,

@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import PageScreen from '../screens/PageScreen';
 import HomeScreen from '../screens/HomeScreen';
 import GeographyScreen from '../screens/GeographyScreen';
+import ZodiacMatchScreen from '../screens/ZodiacMatchScreen';
 import ResultScreen from '../screens/ResultScreen';
 import {useTranslation} from 'react-i18next';
 import {EventRegister} from "react-native-event-listeners";
@@ -61,6 +62,21 @@ function App() {
                                   component={GeographyScreen}
                                   options={{
                                       title: 'geography',
+                                      headerStyle: {
+                                          backgroundColor: '#D5AA72',
+                                          justifyContent: 'flex-end',
+
+                                      },
+                                      headerTintColor: '#0a0857',
+                                      headerTitleStyle: {
+                                          fontWeight: 'bold',
+                                      },
+                                  }}
+                    />
+                    <Stack.Screen name='Zodiac Match'
+                                  component={ZodiacMatchScreen}
+                                  options={{
+                                      title: 'Zodiac Match',
                                       headerStyle: {
                                           backgroundColor: '#D5AA72',
                                           justifyContent: 'flex-end',
