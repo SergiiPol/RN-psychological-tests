@@ -95,7 +95,7 @@ const App = () => {
                                 <TouchableOpacity onPress={()=>  handleAnswer(option.points, currentQuestion.id)}
                                                   key={option.option}>
                                     <View style={styles.buttonAnswer}>
-                                        <Text style={styles.textButtonAnswer}>{t(option.option)}</Text>
+                                        <Text style={styles.textButtonAnswer}> - {t(option.option)}</Text>
                                     </View>
                                 </TouchableOpacity>
                 ))}
@@ -128,19 +128,21 @@ const styles = StyleSheet.create({
         padding: 3,
     },
     wrapperButtonAnswer: {
-        flex: 0.55,
-        alignItems: 'flex-start',
+        flex: 0.65,
+        alignItems: 'baseline',
         // alignContent: 'flex-start',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-around',
         flexDirection: 'column',
+        padding: 15,
         gap: 20,
     },
     buttonAnswer: {
 
     },
     textButtonAnswer: {
-        fontSize: 14,
-        color: '#d9f5c1',
+        fontSize: 22,
+        color: '#4B1E19',
+        marginTop:10,
     },
     buttonResult: {
         flex: 0.1,
@@ -162,10 +164,10 @@ const styles = StyleSheet.create({
     },
     textCurrentQuestion: {
         // flex: 0.1,
-        fontSize: 20,
+        fontSize: 28,
         textAlign: 'center',
         textAlignVertical: 'top',
-        padding: 15,
+        padding: 10,
         borderBottomWidth: 1,
         borderBottomColor: '#fff'
     }

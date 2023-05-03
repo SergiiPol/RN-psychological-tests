@@ -19,7 +19,6 @@ const SwitcherTheme = () => {
             if (value !== null) {
               const mode = JSON.parse(value);
               setMode(mode);
-              console.log(mode, "tema 1");
             }
           });
     }, []);
