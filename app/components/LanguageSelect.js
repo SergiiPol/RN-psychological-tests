@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import themeContext from '../providers/ThemeContext';
 
-export const LanguageSelect = () => {
+ const LanguageSelect = () => {
 
   const theme = useContext(themeContext);
   const { t, i18n } = useTranslation();
@@ -62,5 +62,4 @@ const styles = StyleSheet.create({
   },
 });
 
-
-export default  LanguageSelect ;
+export default LanguageSelect;
