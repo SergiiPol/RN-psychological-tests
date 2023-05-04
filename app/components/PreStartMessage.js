@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Modal, StyleSheet, View, Text, Button, TouchableOpacity } from 'react-native';
 import {useTranslation} from 'react-i18next';
 import Icon from 'react-native-vector-icons/Ionicons';
-import themeContext from '../providers/themeContext';
+import themeContext from '../providers/ThemeContext';
 
 const PreStartMessage = () => {
     const {t} = useTranslation();

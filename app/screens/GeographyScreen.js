@@ -5,8 +5,8 @@ import BackButton from './../components/icons/BackButton';
 import Data from '../data/geography-10.json';
 import ResultScreen from "./ResultScreen";
 import {useTranslation} from 'react-i18next';
-import themeContext from '../providers/themeContext';
-import ProgressBar from '../components/progressBar';
+import themeContext from '../providers/ThemeContext';
+import ProgressBar from '../components/ProgressBar';
 
 const App = () => {
     const theme = useContext(themeContext);

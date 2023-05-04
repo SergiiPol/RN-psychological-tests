@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { View, StyleSheet, Modal, TouchableOpacity } from 'react-native';
-import {LanguageSelect} from './languageSelect';
+import LanguageSelect from './LanguageSelect';
 import SwitcherTheme from './SwitcerTheme';
-import themeContext from '../providers/themeContext';
+import themeContext from '../providers/ThemeContext';
 import { AntDesign, Ionicons } from '@expo/vector-icons'; 
 import ReturnFlag from '../components/ReturnFlag';
 
