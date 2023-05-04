@@ -7,9 +7,9 @@ import Data from '../data/azenk-epq-101.json';
 // import Data from '../data/azenk-epq-101-RU';
 import ResultScreen from "./ResultScreen";
 import { useTranslation } from 'react-i18next';
-import themeContext from '../providers/themeContext';
+import themeContext from '../providers/ThemeContext';
 import PreStartMessage from "../components/PreStartMessage";
-import ProgressBar from '../components/progressBar';
+import ProgressBar from '../components/ProgressBar';
 
 const App = () => {
     const theme = useContext(themeContext);

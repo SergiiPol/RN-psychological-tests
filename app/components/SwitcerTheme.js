@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
 import { EventRegister } from 'react-native-event-listeners';
-import themeContext from '../providers/themeContext';
+import themeContext from '../providers/ThemeContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { FontAwesome } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';

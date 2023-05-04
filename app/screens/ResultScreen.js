@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import themeContext from '../providers/themeContext';
+import themeContext from '../providers/ThemeContext';
 import {useTranslation} from 'react-i18next';
 
 const App = ({route}) => {

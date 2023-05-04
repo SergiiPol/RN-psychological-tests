@@ -3,13 +3,13 @@ import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Button, StatusBar, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import BackButton from './../components/icons/BackButton';
-import Data from '../data/zodiacMatchTest.json';
+import Data from '../data/zodiac-match-20.json';
 // import Data from '../data/azenk-epq-101-RU';
 import ResultScreen from "./ResultScreen";
 import { useTranslation } from 'react-i18next';
-import themeContext from '../providers/themeContext';
+import themeContext from '../providers/ThemeContext';
 import PreStartMessage from "../components/PreStartMessage";
-import ProgressBar from '../components/progressBar';
+import ProgressBar from '../components/ProgressBar';
 
 const App = () => {
     const theme = useContext(themeContext);
@@ -94,8 +94,8 @@ const App = () => {
                 {currentQuestion.options.map(option => (
                                 <TouchableOpacity onPress={()=>  handleAnswer(option.points, currentQuestion.id)}
                                                   key={option.option}>
-                                    <View style={styles.buttonAnswer}>
-                                        <Text style={styles.textButtonAnswer}> - {t(option.option)}</Text>
+                                    <View style={[styles.buttonAnswer, {color: theme.color}]}>
+                                        <Text style={[styles.textButtonAnswer, {color: theme.color}]}> - {t(option.option)}</Text>
                                     </View>
                                 </TouchableOpacity>
                 ))}

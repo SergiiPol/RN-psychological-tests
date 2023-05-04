@@ -8,7 +8,7 @@ import ZodiacMatchScreen from '../screens/ZodiacMatchScreen';
 import ResultScreen from '../screens/ResultScreen';
 import {useTranslation} from 'react-i18next';
 import {EventRegister} from "react-native-event-listeners";
-import themeContext from "../providers/themeContext";
+import themeContext from "../providers/ThemeContext";
 import theme from "../constants/theme";
 import ToolBar from '../components/ToolBar';
 

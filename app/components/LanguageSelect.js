@@ -3,9 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import { useTranslation } from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import themeContext from '../providers/themeContext';
-import {NativeModules, Platform} from 'react-native';
-
+import themeContext from '../providers/ThemeContext';
 
 export const LanguageSelect = () => {
 
@@ -65,3 +63,4 @@ const styles = StyleSheet.create({
 });
 
 
+export default  LanguageSelect ;
