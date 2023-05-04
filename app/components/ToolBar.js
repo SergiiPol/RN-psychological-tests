@@ -39,7 +39,7 @@ const ToolBar = () => {
             <TouchableOpacity onPress={closeModal} style={styles.closeButton}>
               <Ionicons name="close" size={24} color="white" />
             </TouchableOpacity>
-            <LanguageSelect style={styles.languageSelect} />
+            <LanguageSelect style={styles.LanguageSelect} />
             <SwitcherTheme style={styles.switcherTheme} />
           </View>
           <View style={styles.overlay} pointerEvents="box-none" onTouchStart={closeModal} />
