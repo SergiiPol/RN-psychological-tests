@@ -1,11 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Button, StatusBar, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import BackButton from './../components/icons/BackButton';
 import Data from '../data/azenk-epq-101.json';
-// import Data from '../data/azenk-epq-101-RU';
-import ResultScreen from "./ResultScreen";
 import { useTranslation } from 'react-i18next';
 import themeContext from '../providers/ThemeContext';
 import PreStartMessage from "../components/PreStartMessage";
@@ -16,6 +13,7 @@ const App = () => {
     const navigation = useNavigation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [points, setPoints] = useState([]);
+    const [pointsProgressBar, setPointsProgressBar] = useState(0);
 
     const psychoticismKeys = [2, 6, 9, 11, 19, 39, 43, 59, 63, 67, 78, 100, 14, 23, 27, 31, 35, 47, 51, 55, 71, 85, 88, 93, 97];
     const extraversionIntroversionKeys = [22, 30, 46, 84, 1, 5, 10, 15, 18, 26, 34, 38, 42, 50, 54, 58, 62, 66, 70, 74, 77, 81, 90, 92, 96];
@@ -71,11 +69,15 @@ const App = () => {
         if (currentIndex < Data.length-1) {
             setCurrentIndex(currentIndex + 1);
         }
+        if (currentIndex < Data.length) {
+            setPointsProgressBar(currentIndex + 1);
+        }
     };
 
     const handlePrev = () => {
         if (currentIndex > 0) {
             setCurrentIndex(currentIndex - 1);
+            setPointsProgressBar(currentIndex - 1);
         }
     };
 
@@ -84,24 +86,27 @@ const App = () => {
 
     return (
         <View style={[styles.container, {backgroundColor: theme.background}]}>
-            <ProgressBar value={currentIndex} max={Data.length} />
-            <PreStartMessage style={{ justifyContent: 'start', alignItems: 'start' , padding: 5}} />
+            <ProgressBar value={pointsProgressBar} max={Data.length} />
+            {pointsProgressBar !== currentIndex +1 && (
+                <PreStartMessage style={{ justifyContent: 'start', alignItems: 'start' , padding: 5}} />
+            )}
             {/* <Text style={[styles.textQuestion, {color: theme.color}]}>{t("QuestionNumber")}{currentQuestion.id}
             </Text> */}
-            <Text style={[styles.textCurrentQuestion, {color: theme.color}]}>{t(currentQuestion.question)}
-            </Text>
-            <View style={styles.wrapperButtonAnswer}>
-                {currentQuestion.options.map(option => (
-                                <TouchableOpacity onPress={()=>  handleAnswer(option.points, currentQuestion.id)}
-                                                  key={option.option}>
-                                    <View style={styles.buttonAnswer}>
-                                        <Text style={styles.textButtonAnswer}>{t(option.option)}</Text>
-                                    </View>
-                                </TouchableOpacity>
-                ))}
-            </View>
+            {pointsProgressBar !== currentIndex +1 &&(
+            <><Text style={[styles.textCurrentQuestion, { color: theme.color }]}>{t(currentQuestion.question)}
+                </Text><View style={styles.wrapperButtonAnswer}>
+                        {currentQuestion.options.map(option => (
+                            <TouchableOpacity onPress={() => handleAnswer(option.points, currentQuestion.id)}
+                                key={option.option}>
+                                <View style={styles.buttonAnswer}>
+                                    <Text style={styles.textButtonAnswer}>{t(option.option)}</Text>
+                                </View>
+                            </TouchableOpacity>
+                        ))}
+                    </View></>
+            )}
             <View style={styles.buttonBack}>
-                    {currentIndex !== 0 && (
+                    {currentIndex !== 0 && pointsProgressBar !== currentIndex +1 &&(
                         <View>
                             <BackButton onPress={handlePrev} disabled={currentIndex === 0}/>
                         </View>
@@ -142,12 +147,12 @@ const styles = StyleSheet.create({
         color: '#d9f5c1',
     },
     buttonResult: {
-        flex: 0.1,
+        flex: 0.15,
         justifyContent: 'center',
-        marginTop: 10,
-    },
+        marginTop: '50%',
+        },
     buttonBack: {
-        flex: 0.04,
+        flex: 0.05,
         backgroundColor: '#fffc' ,
         borderRadius: 50,
         marginTop:10,

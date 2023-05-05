@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Button, Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import { useTranslation } from 'react-i18next';
 import themeContext from '../providers/ThemeContext';
 
