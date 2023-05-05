@@ -65,7 +65,7 @@ const App = ({route}) => {
             } else if (resultPoints[2] >= 8) {
                 return t('XC');
             } else {
-                return t('неопеределено');
+                return t('неопределено');
             }
         } else if (resultPoints[1] <= 6) {
             if (resultPoints[2] > 16) {
@@ -75,7 +75,7 @@ const App = ({route}) => {
             } else if (resultPoints[2] >= 8) {
                 return t('ФМ');
             } else {
-                return t('неопеределено');
+                return t('неопределено');
             }
         } else if (resultPoints[1] > 7) {
             if (resultPoints[2] > 16) {
@@ -85,7 +85,7 @@ const App = ({route}) => {
             } else if (resultPoints[2] >= 8) {
                 return t('Н');
             } else {
-                return t('неопеределено');
+                return t('неопределено');
             }
         }
     }

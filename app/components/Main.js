@@ -11,6 +11,7 @@ import {EventRegister} from "react-native-event-listeners";
 import themeContext from "../providers/ThemeContext";
 import theme from "../constants/theme";
 import ToolBar from '../components/ToolBar';
+import PreStartMessage from '../components/PreStartMessage';
 
 const Stack = createNativeStackNavigator();
 

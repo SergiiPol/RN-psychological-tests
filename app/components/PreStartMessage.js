@@ -32,14 +32,16 @@ const PreStartMessage = () => {
 };
 const styles = StyleSheet.create({
     containerInformation: {
-        flex: 0.1,
+        // flex: 0.1,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         alignSelf: 'center',
-        height: 55,
-        width: '30%',
+        height: 30,
+        width: 30,
         marginTop: 0,
+        marginRight: 10,
+        zIndex: 20
     },
     modalWrapper: {
         flex: 1,
@@ -50,7 +52,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:'#f69a9a',
+        backgroundColor:'red',
       },
       buttonClose: {
         marginTop: 50,
