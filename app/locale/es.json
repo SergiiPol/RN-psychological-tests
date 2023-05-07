@@ -3,11 +3,13 @@
   "GoToTheTest": "Iniciar prueba",
   "Language": "Idioma:",
   "ZodiacMatch": "Compatibilidad astrológica",
+  "My profession...": "Mi profesión...",
+  "Level of depression": "Nivel de depresión",
   "Home": "Página principal",
   "ResultScreen:": "Resultado",
   "QuestionNumber": "Número de pregunta ",
   "Result": "Resultado",
-  "absent": "falta",
+  "absent": "Falta",
   "Да": "Si",
   "Нет": "No",
   "neuroticism": "Neuroticismo",
@@ -15,6 +17,7 @@
   "extraversion": "Extraversión",
   "sincerity": "Sinceridad",
   "ToggleTheme": "Cambiar de thema",
+  "GoHome": "Ir a la página de inicio",
   "У Вас много различных хобби?": "¿Tienes muchos pasatiempos diferentes?",
   "Вы обдумываете предварительно то, что собираетесь сделать?": "¿Piensas de antemano en lo que vas a hacer?",
   "У Вас часто бывают спады и подъемы настроения?": "¿Tienes cambios de humor frecuentes?",
@@ -117,6 +120,7 @@
   "Вам когда-нибудь было жалко животное, которое попало в капкан?": "¿Alguna vez te ha dado pena un animal atrapado en una trampa?",
   "Трудно ли Вам было заполнять анкету?":"¿Le resultó difícil completar el cuestionario?",
   "Есть склонность к эмоциональной неадекватности": "Hay una tendencia hacia la inadecuación emocional.",
+  "Работа с людьми противопоказана": "Está contraindicado trabajar con personas.",
   "'чистый' экстраверт": "'Puro' extrovertido",
   "'чистый' интроверт": "'Puro' introvertido",
   "амбивалентность, неопределённость": "Ambivalencia, incertidumbre",
@@ -219,7 +223,12 @@
 "Как вы относитесь к людям, у которых сильно отличаются взгляды от ваших?": "¿Cómo te sientes acerca de las personas cuyas opiniones difieren significativamente de las tuyas?",
 "Негативно, я не хочу иметь дело с такими людьми": "Negativamente, no quiero lidiar con esas personas",
 "Нейтрально, я не обращаю на это внимания": "Neutral, no presto mucha atención a eso",
-"Положительно, я считаю, что отличия взглядов могут привести к интересным дискуссиям": "Positivamente, creo que las diferencias de opinión pueden llevar a discusiones interesantes"
+"Положительно, я считаю, что отличия взглядов могут привести к интересным дискуссиям": "Positivamente, creo que las diferencias de opinión pueden llevar a discusiones interesantes",
+"Вам наиболее подходят люди, родившиеся под знаками: Льва, Овна, Козерог и Стрельца.": "Eres más adecuado para las personas nacidas bajo los signos: Leo, Aries, Capricornio y Sagitario.",
+"Вам наиболее подходят люди, родившиеся под знаками: Близнецов, Телец, Весов и Водолея.": "Eres más adecuado para las personas nacidas bajo los signos de Géminis, Tauro, Libra y Acuario.",
+"Bам наиболее подходят люди, родившиеся под знаками: Рака, Дева, Скорпиона и Рыб.": "Eres más adecuado para las personas nacidas bajo los signos de Cáncer, Virgo, Escorpio y Piscis.",
 
-
+  "ВариантА": "Usted es una persona extrovertida y extrovertida que disfruta trabajar con personas y hacer nuevas conexiones. Las carreras como gerente, vendedor, trabajador social y otras carreras relacionadas con la comunicación pueden ser adecuadas para usted.",
+  "ВариантБ": "Usted es una persona bastante polivalente que puede trabajar tanto en equipo como por tu cuenta. Puede ser apto para distintas profesiones que requieran flexibilidad y adaptabilidad, como consultor, autónomo o gestor de proyectos.",
+  "BариантС": "Prefiere trabajar por su cuenta y evitar interactuar con la gente. Trabajos como arquitecto, programador, escritor y otros que te permitan trabajar solo y no depender de otras personas pueden ser adecuados para ti."
 }

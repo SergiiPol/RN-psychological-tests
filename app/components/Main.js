@@ -5,13 +5,14 @@ import PageScreen from '../screens/PageScreen';
 import HomeScreen from '../screens/HomeScreen';
 import GeographyScreen from '../screens/GeographyScreen';
 import ZodiacMatchScreen from '../screens/ZodiacMatchScreen';
+import MyProfessionScreen from '../screens/MyProfessionScreen';
+import LevelOfDepression from '../screens/LevelOfDepression';
 import ResultScreen from '../screens/ResultScreen';
 import {useTranslation} from 'react-i18next';
 import {EventRegister} from "react-native-event-listeners";
 import themeContext from "../providers/ThemeContext";
 import theme from "../constants/theme";
 import ToolBar from '../components/ToolBar';
-import PreStartMessage from '../components/PreStartMessage';
 
 const Stack = createNativeStackNavigator();
 
@@ -78,6 +79,36 @@ function App() {
                                   component={ZodiacMatchScreen}
                                   options={{
                                       title: 'Zodiac Match',
+                                      headerStyle: {
+                                          backgroundColor: '#D5AA72',
+                                          justifyContent: 'flex-end',
+
+                                      },
+                                      headerTintColor: '#0a0857',
+                                      headerTitleStyle: {
+                                          fontWeight: 'bold',
+                                      },
+                                  }}
+                    />
+                    <Stack.Screen name='My profession...'
+                                  component={MyProfessionScreen}
+                                  options={{
+                                      title: 'My profession...',
+                                      headerStyle: {
+                                          backgroundColor: '#D5AA72',
+                                          justifyContent: 'flex-end',
+
+                                      },
+                                      headerTintColor: '#0a0857',
+                                      headerTitleStyle: {
+                                          fontWeight: 'bold',
+                                      },
+                                  }}
+                    />
+                    <Stack.Screen name='Assessing the level of depression'
+                                  component={LevelOfDepression}
+                                  options={{
+                                      title: 'Assessing the level of depression',
                                       headerStyle: {
                                           backgroundColor: '#D5AA72',
                                           justifyContent: 'flex-end',

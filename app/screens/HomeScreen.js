@@ -25,6 +25,16 @@ const App = ({navigation}) => {
              <Text style={styles.textButtonZodiac}>{t('ZodiacMatch')}</Text>
             </View>
           </TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.navigate('My profession...')}>
+            <View style={styles.buttonZodiac}>
+             <Text style={styles.textButtonZodiac}>{t('My profession...')}</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.navigate('Assessing the level of depression')}>
+            <View style={styles.buttonZodiac}>
+             <Text style={styles.textButtonZodiac}>{t('Level of depression')}</Text>
+            </View>
+          </TouchableOpacity>
         </View>
     );
 };
@@ -43,17 +53,27 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   button: {
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderBottomWidth: 2,
-    borderColor: '#CB8A58',
+    // height: 50,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // borderBottomWidth: 2,
+    // borderColor: '#CB8A58',
+    borderRadius: 20,
+    padding: 7,
+    elevation: 15,
+    marginTop: 10,
+    backgroundColor: "#BFBDC0",
   },
   buttonZodiac:{
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderBottomWidth: 2,
-    borderColor: '#CB8A58',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // borderBottomWidth: 2,
+    // borderColor: '#CB8A58',
+    borderRadius: 20,
+    padding: 7,
+    elevation: 15,
+    marginTop: 10,
+    backgroundColor: "#BFBDC0",
   },
   textButton:{
     fontSize: 32,
