@@ -3,6 +3,8 @@
   "GoToTheTest": "GO TO THE TEST",
   "Language": "Language:",
   "ZodiacMatch": "Astrological compatibility",
+  "My profession...": "My profession...",
+  "Level of depression": "Level of depression",
   "Home": "Home",
   "ResultScreen": "Result",
   "QuestionNumber": "Question number ",
@@ -14,6 +16,7 @@
   "extraversion": "Extraversion",
   "sincerity": "Sincerity",
   "ToggleTheme": "Toggle theme",
+  "GoHome": "Go to home page",
   "У Вас много различных хобби?": "Do you have many different hobbies?",
   "Вы обдумываете предварительно то, что собираетесь сделать?": "Do you think ahead about what you are going to do?",
   "У Вас часто бывают спады и подъемы настроения?": "Do you often have mood swings?",
@@ -116,6 +119,8 @@
   "Вам когда-нибудь было жалко животное, которое попало в капкан?": "Have you ever felt sorry for an animal that got caught in a trap?",
   "Трудно ли Вам было заполнять анкету?": "Was it difficult for you to fill out the questionnaire?",
   "Есть склонность к эмоциональной неадекватности": "There is a tendency towards emotional inadequacy",
+  "Работа с людьми противопоказана": "Working with people is contraindicated",
+  "absent":"Absent",
   "'чистый' экстраверт": "'Pure' extravert",
   "'чистый' интроверт": "'Pure' introvert",
   "амбивалентность, неопределённость": "Ambivalence, uncertainty",
@@ -218,6 +223,13 @@
 "Как вы относитесь к людям, у которых сильно отличаются взгляды от ваших?":"How do you feel about people whose views differ significantly from yours?",
 "Негативно, я не хочу иметь дело с такими людьми": "Negatively, I don't want to deal with such people",
 "Нейтрально, я не обращаю на это внимания": "Neutral, I don't pay much attention to it",
-"Положительно, я считаю, что отличия взглядов могут привести к интересным дискуссиям": "Positively, I think that differences in views can lead to interesting discussions"
+"Положительно, я считаю, что отличия взглядов могут привести к интересным дискуссиям": "Positively, I think that differences in views can lead to interesting discussions",
+"Вам наиболее подходят люди, родившиеся под знаками: Льва, Овна, Козерог и Стрельца.": "You are most suitable for people born under the signs: Leo, Aries, Capricorn and Sagittarius.",
+"Вам наиболее подходят люди, родившиеся под знаками: Близнецов, Телец, Весов и Водолея.": "You are most suited to people born under the signs of Gemini, Taurus, Libra and Aquarius.",
+"Bам наиболее подходят люди, родившиеся под знаками: Рака, Дева, Скорпиона и Рыб.": "You are most suitable for people born under the signs of Cancer, Virgo, Scorpio and Pisces.",
+
+  "ВариантА": "You are an outgoing and outgoing person who enjoys working with people and making new connections. Careers such as manager, salesperson, social worker, and other communication-related careers may suit you.",
+  "ВариантБ": "You are a fairly versatile person who can work both in a team and on your own. You may be suitable for different professions that require flexibility and adaptability, such as a consultant, freelancer or project manager.",
+  "BариантС": "You prefer to work on your own and avoid interacting with people. Jobs such as architect, programmer, writer, and others that allow you to work alone and not depend on other people may suit you."
 
 }

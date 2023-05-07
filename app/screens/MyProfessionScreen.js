@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View, TouchableOpacity, Modal } from 'react-native';
 import BackButton from './../components/icons/BackButton';
-import Data from '../data/zodiac-match-20.json';
+import Data from '../data/my-profession-15.json';
 import { useTranslation } from 'react-i18next';
 import {themeContext} from '../providers/ThemeContext';
 import PreStartMessage from "../components/PreStartMessage";
@@ -59,11 +59,11 @@ const App = () => {
  
         // console.log(maxCount);
         if (maxCount === counts.a) {
-            setResultPoints(t("Вам наиболее подходят люди, родившиеся под знаками: Льва, Овна, Козерог и Стрельца."));
+            setResultPoints(t("ВариантА"));
         } else if (maxCount === counts.b) {
-            setResultPoints(t("Вам наиболее подходят люди, родившиеся под знаками: Близнецов, Телец, Весов и Водолея."));
+            setResultPoints(t("ВариантБ"));
         } else {
-            setResultPoints(t("Bам наиболее подходят люди, родившиеся под знаками: Рака, Дева, Скорпиона и Рыб."));
+            setResultPoints(t("BариантС"));
         }
         
     };
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
         gap: 20,
     },
     textButtonAnswer: {
-        fontSize: 22,
+        fontSize: 19,
         color: '#4B1E19',
         marginTop:10,
     },
@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
       modalText: {
         marginBottom: 15,
         textAlign: "center",
-        fontSize: 30,
+        fontSize: 24,
         textAlignVertical: 'center',
         padding: 10,
       },
@@ -274,3 +274,7 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
+// Большинство ответов "а": вы общительный и коммуникабельный человек, который любит работать с людьми и создавать новые связи. Вам могут подойти такие карьеры, как менеджер, продажник, социальный работник и другие профессии, связанные с общением.
+// Большинство ответов "б": вы довольно универсальный человек, который может работать и в команде, и самостоятельно. Вам могут подойти разные профессии, которые требуют гибкости и адаптивности, такие как консультант, фрилансер или менеджер проектов.
+// Большинство ответов "в": вы предпочитаете работать самостоятельно и избегать общения с людьми. Вам могут подойти такие профессии, как архитектор, програмист, писатель и другие, которые позволяют работать в одиночку и не зависеть от других людей.
