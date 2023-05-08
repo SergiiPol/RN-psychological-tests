@@ -27,19 +27,19 @@
       "options": [
         {
           "option": "Никогда или изредка",
-          "points": 1
+          "points": 4
         },
         {
           "option": "Иногда",
-          "points": 2
-        },
-        {
-          "option": "Часто",
           "points": 3
         },
         {
+          "option": "Часто",
+          "points": 2
+        },
+        {
           "option": "Почти всегда или постоянно",
-          "points": 4
+          "points": 1
         }
       ]
     },
@@ -93,19 +93,19 @@
       "options": [
         {
           "option": "Никогда или изредка",
-          "points": 1
+          "points": 4
         },
         {
           "option": "Иногда",
-          "points": 2
-        },
-        {
-          "option": "Часто",
           "points": 3
         },
         {
+          "option": "Часто",
+          "points": 2
+        },
+        {
           "option": "Почти всегда или постоянно",
-          "points": 4
+          "points": 1
         }
       ]
     },
@@ -115,19 +115,19 @@
       "options": [
         {
           "option": "Никогда или изредка",
-          "points": 1
+          "points": 4
         },
         {
           "option": "Иногда",
-          "points": 2
-        },
-        {
-          "option": "Часто",
           "points": 3
         },
         {
+          "option": "Часто",
+          "points": 2
+        },
+        {
           "option": "Почти всегда или постоянно",
-          "points": 4
+          "points": 1
         }
       ]
     },
@@ -225,19 +225,19 @@
       "options": [
         {
           "option": "Никогда или изредка",
-          "points": 1
+          "points": 4
         },
         {
           "option": "Иногда",
-          "points": 2
-        },
-        {
-          "option": "Часто",
           "points": 3
         },
         {
+          "option": "Часто",
+          "points": 2
+        },
+        {
           "option": "Почти всегда или постоянно",
-          "points": 4
+          "points": 1
         }
       ]
     },
@@ -247,19 +247,19 @@
       "options": [
         {
           "option": "Никогда или изредка",
-          "points": 1
+          "points": 4
         },
         {
           "option": "Иногда",
-          "points": 2
-        },
-        {
-          "option": "Часто",
           "points": 3
         },
         {
+          "option": "Часто",
+          "points": 2
+        },
+        {
           "option": "Почти всегда или постоянно",
-          "points": 4
+          "points": 1
         }
       ]
     },
@@ -291,19 +291,19 @@
       "options": [
         {
           "option": "Никогда или изредка",
-          "points": 1
+          "points": 4
         },
         {
           "option": "Иногда",
-          "points": 2
-        },
-        {
-          "option": "Часто",
           "points": 3
         },
         {
+          "option": "Часто",
+          "points": 2
+        },
+        {
           "option": "Почти всегда или постоянно",
-          "points": 4
+          "points": 1
         }
       ]
     },
@@ -335,19 +335,19 @@
       "options": [
         {
           "option": "Никогда или изредка",
-          "points": 1
+          "points": 4
         },
         {
           "option": "Иногда",
-          "points": 2
-        },
-        {
-          "option": "Часто",
           "points": 3
         },
         {
+          "option": "Часто",
+          "points": 2
+        },
+        {
           "option": "Почти всегда или постоянно",
-          "points": 4
+          "points": 1
         }
       ]
     },
@@ -357,19 +357,19 @@
       "options": [
         {
           "option": "Никогда или изредка",
-          "points": 1
+          "points": 4
         },
         {
           "option": "Иногда",
-          "points": 2
-        },
-        {
-          "option": "Часто",
           "points": 3
         },
         {
+          "option": "Часто",
+          "points": 2
+        },
+        {
           "option": "Почти всегда или постоянно",
-          "points": 4
+          "points": 1
         }
       ]
     },
@@ -379,19 +379,19 @@
       "options": [
         {
           "option": "Никогда или изредка",
-          "points": 1
+          "points": 4
         },
         {
           "option": "Иногда",
-          "points": 2
-        },
-        {
-          "option": "Часто",
           "points": 3
         },
         {
+          "option": "Часто",
+          "points": 2
+        },
+        {
           "option": "Почти всегда или постоянно",
-          "points": 4
+          "points": 1
         }
       ]
     },
@@ -423,19 +423,19 @@
       "options": [
         {
           "option": "Никогда или изредка",
-          "points": 1
+          "points": 4
         },
         {
           "option": "Иногда",
-          "points": 2
-        },
-        {
-          "option": "Часто",
           "points": 3
         },
         {
+          "option": "Часто",
+          "points": 2
+        },
+        {
           "option": "Почти всегда или постоянно",
-          "points": 4
+          "points": 1
         }
       ]
     }

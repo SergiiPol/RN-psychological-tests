@@ -36,16 +36,17 @@ const App = () => {
 
       
       const calculateFinalPoints = () => {
-console.log(finalPoints);
- 
-        
-         if (finalPoints === 80) {
-             setResultPoints(t("ВариантА"));
-         } else if (finalPoints === 20) {
-             setResultPoints(t("ВариантБ"));
-         } else {
-             setResultPoints(t("BариантС"));
-         }
+        if (finalPoints <= 50) {
+            setResultPoints(t("Без депрессии"));
+          } else if (finalPoints >= 51 && finalPoints <= 59) {
+            setResultPoints(t("Легкая депрессия"));
+          } else if (finalPoints >= 60 && finalPoints <= 69) {
+            setResultPoints(t("Субдепрессивное состояние"));
+          } else if (finalPoints >= 70) {
+            setResultPoints(t("Истинное депрессивное состояние"));
+          } else {
+            setResultPoints(t("Попробуйте ещё раз"));
+          }
         
     };
     
