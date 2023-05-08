@@ -230,6 +230,14 @@
 
   "ВариантА": "You are an outgoing and outgoing person who enjoys working with people and making new connections. Careers such as manager, salesperson, social worker, and other communication-related careers may suit you.",
   "ВариантБ": "You are a fairly versatile person who can work both in a team and on your own. You may be suitable for different professions that require flexibility and adaptability, such as a consultant, freelancer or project manager.",
-  "BариантС": "You prefer to work on your own and avoid interacting with people. Jobs such as architect, programmer, writer, and others that allow you to work alone and not depend on other people may suit you."
+  "BариантС": "You prefer to work on your own and avoid interacting with people. Jobs such as architect, programmer, writer, and others that allow you to work alone and not depend on other people may suit you.",
 
+"Без депрессии": "Your condition without depression.",
+"Легкая депрессия": "You have a state of mild depression of a situational or neurotic origin.",
+"Субдепрессивное состояние": "You have a subdepressive state. You have a state of mild depression of a situational or neurotic origin. or masked depression.",
+"Истинное депрессивное состояние": "You are truly depressed. We recommend that you contact a specialist.",
+"Никогда или изредка": "Never or occasionally",
+"Иногда": "Sometimes",
+"Часто": "Often",
+"Почти всегда или постоянно": "Almost always or constantly"
 }

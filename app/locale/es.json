@@ -230,5 +230,14 @@
 
   "ВариантА": "Usted es una persona extrovertida y extrovertida que disfruta trabajar con personas y hacer nuevas conexiones. Las carreras como gerente, vendedor, trabajador social y otras carreras relacionadas con la comunicación pueden ser adecuadas para usted.",
   "ВариантБ": "Usted es una persona bastante polivalente que puede trabajar tanto en equipo como por tu cuenta. Puede ser apto para distintas profesiones que requieran flexibilidad y adaptabilidad, como consultor, autónomo o gestor de proyectos.",
-  "BариантС": "Prefiere trabajar por su cuenta y evitar interactuar con la gente. Trabajos como arquitecto, programador, escritor y otros que te permitan trabajar solo y no depender de otras personas pueden ser adecuados para ti."
+  "BариантС": "Prefiere trabajar por su cuenta y evitar interactuar con la gente. Trabajos como arquitecto, programador, escritor y otros que te permitan trabajar solo y no depender de otras personas pueden ser adecuados para ti.",
+
+"Без депрессии": "Su condición sin depresión.",
+"Легкая депрессия": "Usted tiene un estado de depresión leve de origen situacional o neurótico.",
+"Субдепрессивное состояние": "Usted tiene una depresión subdepresiva o enmascarada.",
+"Истинное депрессивное состояние": "Usted tiene verdaderamente deprimido. Le recomendamos que se ponga en contacto con un especialista.",
+"Никогда или изредка": "Nunca u ocasionalmente",
+"Иногда": "A veces",
+"Часто": "A menudo",
+"Почти всегда или постоянно": "Casi siempre o constantemente"
 }
