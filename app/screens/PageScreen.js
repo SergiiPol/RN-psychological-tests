@@ -88,7 +88,8 @@ const App = () => {
         <View style={[styles.container, {backgroundColor: theme.background}]}>
             <ProgressBar value={pointsProgressBar} max={Data.length} />
             {pointsProgressBar !== currentIndex +1 && (
-                <PreStartMessage style={{ justifyContent: 'start', alignItems: 'start' , padding: 5}} />
+                <PreStartMessage  messageTime={t('azenk-pre-start-message-time')} messageText={t('azenk-pre-start-message')} 
+                style={{ justifyContent: 'start', alignItems: 'start' , padding: 5}} />
             )}
             {/* <Text style={[styles.textQuestion, {color: theme.color}]}>{t("QuestionNumber")}{currentQuestion.id}
             </Text> */}

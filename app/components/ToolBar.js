@@ -30,9 +30,7 @@ const ToolBar = () => {
         animationType='fade'
         transparent={true}
         visible={modalVisible}
-        onDismiss={() => {
-          setModalVisible(false);
-        }}
+        onDismiss={closeModal}
       >
         <View style={styles.modalWrapper}>
           <View style={[styles.modalContainer, {backgroundColor: theme.background}]}>
@@ -42,7 +40,10 @@ const ToolBar = () => {
             <LanguageSelect style={styles.LanguageSelect} />
             <SwitcherTheme style={styles.switcherTheme} />
           </View>
-          <View style={styles.overlay} pointerEvents="box-none" onTouchStart={closeModal} />
+          <TouchableOpacity
+            onPress={closeModal}
+            style={[styles.overlay, {backgroundColor: theme.overlay}]}
+          />
         </View>
       </Modal>
     </View>
@@ -51,7 +52,7 @@ const ToolBar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#D5AA72',
+    backgroundColor: 'transparent',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignSelf: 'flex-end',
@@ -82,6 +83,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     paddingTop: 50,
     paddingLeft: 20,
+    zIndex: 2,
   },
   closeButton: {
     position: 'absolute',

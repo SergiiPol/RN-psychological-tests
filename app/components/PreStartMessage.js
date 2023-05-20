@@ -4,7 +4,7 @@ import {useTranslation} from 'react-i18next';
 import Icon from 'react-native-vector-icons/Ionicons';
 import themeContext from '../providers/ThemeContext';
 
-const PreStartMessage = () => {
+const PreStartMessage = ( { messageTime, messageText } ) => {
     const {t} = useTranslation();
     const theme = useContext(themeContext);
     const [visible, setVisible] = useState(true);
@@ -17,8 +17,8 @@ const PreStartMessage = () => {
             <Modal visible={visible} animationType="slide" >
                 <View style={styles.modalWrapper}>
                     <View style={[styles.modalContainer, {backgroundColor: theme.background}]}>
-                        <Text style={styles.textModalHeader}>{t('azenk-pre-start-message-time')}{"\n"}</Text>
-                        <Text style={styles.textModal}>{t('azenk-pre-start-message')}</Text>
+                        <Text style={styles.textModalHeader}>{messageTime}{"\n"}</Text>
+                        <Text style={styles.textModal}>{messageText}</Text>
                         <TouchableOpacity onPress={() => setVisible(false)}>
                             <View style={styles.buttonClose}>
                                <Text style={styles.textButtonClose}>{t("Close")}</Text>
@@ -32,7 +32,7 @@ const PreStartMessage = () => {
 };
 const styles = StyleSheet.create({
     containerInformation: {
-        // flex: 0.1,
+        flex: 0.08,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
       },
       textButtonClose: {
         fontSize: 26,
-        color: '#fc7482',
+        color: 'green',
       },
       textModalHeader: {
         fontSize: 24,

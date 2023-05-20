@@ -1,12 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {DarkTheme, DefaultTheme, NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import CharacterAndPersonalityScreen from '../screens/CharacterAndPersonalityScreen';
+import EntertainmentTestsScreen from '../screens/EntertainmentTestsScreen';
+import IntellectualTestsScreen from '../screens/IntellectualTestsScreen';
 import PageScreen from '../screens/PageScreen';
 import HomeScreen from '../screens/HomeScreen';
 import GeographyScreen from '../screens/GeographyScreen';
 import ZodiacMatchScreen from '../screens/ZodiacMatchScreen';
 import MyProfessionScreen from '../screens/MyProfessionScreen';
 import LevelOfDepression from '../screens/LevelOfDepression';
+import LevelOfMoodScreen from '../screens/LevelOfMoodScreen';
 import ResultScreen from '../screens/ResultScreen';
 import {useTranslation} from 'react-i18next';
 import {EventRegister} from "react-native-event-listeners";
@@ -43,7 +47,7 @@ function App() {
                                       },
                                       headerTintColor: '#562B1A',
                                       headerTitleStyle: {
-                                          fontWeight: 'bold',
+                                          fontWeight: '900',
                                       },
                                   }}
                     />
@@ -69,7 +73,7 @@ function App() {
                                           justifyContent: 'flex-end',
 
                                       },
-                                      headerTintColor: '#0a0857',
+                                      headerTintColor: '#562B1A',
                                       headerTitleStyle: {
                                           fontWeight: 'bold',
                                       },
@@ -84,7 +88,7 @@ function App() {
                                           justifyContent: 'flex-end',
 
                                       },
-                                      headerTintColor: '#0a0857',
+                                      headerTintColor: '#562B1A',
                                       headerTitleStyle: {
                                           fontWeight: 'bold',
                                       },
@@ -99,7 +103,7 @@ function App() {
                                           justifyContent: 'flex-end',
 
                                       },
-                                      headerTintColor: '#0a0857',
+                                      headerTintColor: '#562B1A',
                                       headerTitleStyle: {
                                           fontWeight: 'bold',
                                       },
@@ -114,7 +118,63 @@ function App() {
                                           justifyContent: 'flex-end',
 
                                       },
-                                      headerTintColor: '#0a0857',
+                                      headerTintColor: '#562B1A',
+                                      headerTitleStyle: {
+                                          fontWeight: 'bold',
+                                      },
+                                  }}
+                    />
+                    <Stack.Screen name='Character and personality'
+                                  component={CharacterAndPersonalityScreen}
+                                  options={{
+                                      title: 'Character and personality',
+                                      headerStyle: {
+                                          backgroundColor: '#D5AA72',
+                                          justifyContent: 'start',
+                                      },
+                                      headerTintColor: '#562B1A',
+                                      headerTitleStyle: {
+                                          fontWeight: 'bold',
+                                      },
+                                  }}
+                    />
+                    <Stack.Screen name='Entertainment tests'
+                                  component={EntertainmentTestsScreen}
+                                  options={{
+                                      title: 'Entertainment tests',
+                                      headerStyle: {
+                                          backgroundColor: '#D5AA72',
+                                          justifyContent: 'start',
+                                      },
+                                      headerTintColor: '#562B1A',
+                                      headerTitleStyle: {
+                                          fontWeight: 'bold',
+                                      },
+                                  }}
+                    />
+                    <Stack.Screen name='Intellectual tests'
+                                  component={IntellectualTestsScreen}
+                                  options={{
+                                      title: 'Intellectual tests',
+                                      headerStyle: {
+                                          backgroundColor: '#D5AA72',
+                                          justifyContent: 'start',
+                                      },
+                                      headerTintColor: '#562B1A',
+                                      headerTitleStyle: {
+                                          fontWeight: 'bold',
+                                      },
+                                  }}
+                    />
+                    <Stack.Screen name='Level of mood'
+                                  component={LevelOfMoodScreen}
+                                  options={{
+                                      title: 'Level of mood',
+                                      headerStyle: {
+                                          backgroundColor: '#D5AA72',
+                                          justifyContent: 'start',
+                                      },
+                                      headerTintColor: '#562B1A',
                                       headerTitleStyle: {
                                           fontWeight: 'bold',
                                       },
@@ -128,7 +188,7 @@ function App() {
                                           backgroundColor: '#D5AA72',
                                           justifyContent: 'start',
                                       },
-                                      headerTintColor: '#0a0857',
+                                      headerTintColor: '#562B1A',
                                       headerTitleStyle: {
                                           fontWeight: 'bold',
                                       },

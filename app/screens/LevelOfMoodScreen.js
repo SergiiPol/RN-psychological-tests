@@ -1,12 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { StyleSheet, Text, View, TouchableOpacity, Modal } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView } from 'react-native';
 import BackButton from './../components/icons/BackButton';
-import Data from '../data/zodiac-match-20.json';
+import Data from '../data/mood-20.json';
 import { useTranslation } from 'react-i18next';
 import {themeContext} from '../providers/ThemeContext';
 import PreStartMessage from "../components/PreStartMessage";
 import ProgressBar from '../components/ProgressBar';
+import BarChart from '../components/BarChart';
 
 const App = () => {
     const { t } = useTranslation()
@@ -16,65 +17,154 @@ const App = () => {
     const [points, setPoints] = useState(Array(Data.length).fill(''));
     const [pointsProgressBar, setPointsProgressBar] = useState(0);
     const [modalVisible, setModalVisible] = useState(false);
-    const [resultPoints, setResultPoints] = useState();
+    const [moodPoints] = useState([]);
+    const [asthenicCondition] = useState([]);
+    const [euphoriaState] = useState([]);
+    const [moodFinalPoints, setMoodFinalPoints]= useState(0);
+    const [asthenicFinalPoints, setAsthenicFinalPoints]= useState(0);
+    const [euphoriaFinalPoints, setEuphoriaFinalPoints]= useState(0);
+    const totalPoint = [moodFinalPoints, asthenicFinalPoints,euphoriaFinalPoints];
+
+    const chartData = [
+      { quarter: "A", earnings: moodFinalPoints },
+      { quarter: "B", earnings: asthenicFinalPoints },
+      { quarter: "С", earnings: euphoriaFinalPoints },
+    ];
+
+function calculatePoints(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (!arr[i]) {
+      return false;
+    }
+  }
+  for (let i = 0; i < arr.length; i++){
+    if(arr[i] === "Нет"){
+      moodPoints.push(arr[i]);
+    }
+    if (["Да"].includes(arr[i]) && [1, 2, 3, 4, 6, 8, 9, 10, 12, 13, 14, 17, 18, 19].includes(i)) {
+      asthenicCondition.push(arr[i]);
+    }
+    if (["Наоборот"].includes(arr[i]) && [0, 5, 7, 11, 15, 16].includes(i)) {
+      asthenicCondition.push(arr[i]);
+    }
+    if (["Да"].includes(arr[i]) && [ 0, 5, 7, 11, 15, 16].includes(i)) {
+      euphoriaState.push(arr[i]);
+    }
+    if (["Наоборот"].includes(arr[i]) && [ 1, 2, 3, 4, 6, 8, 9, 10, 12, 13, 14, 17, 18, 19].includes(i)) {
+      euphoriaState.push(arr[i]);
+    }
+  }
+  return moodPoints.length === 0 && asthenicCondition.length > 0;
+}
+
+function calculateMoodScore(arrayLength) {
+  if (arrayLength === 20) {
+    return 9;
+  } else if (arrayLength === 19) {
+    return 8;
+  } else if (arrayLength === 18) {
+    return 7;
+  } else if (arrayLength >= 16 && arrayLength <= 17) {
+    return 6;
+  } else if (arrayLength >= 13 && arrayLength <= 15) {
+    return 5;
+  } else if (arrayLength >= 10 && arrayLength <= 12) {
+    return 4;
+  } else if (arrayLength >= 8 && arrayLength <= 9) {
+    return 3;
+  } else if (arrayLength >= 6 && arrayLength <= 7) {
+    return 2;
+  } else if (arrayLength === 5) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+function calculateAsthenicScore(length) {
+   if (length <= 2) {
+    return 0;
+  } else if (length === 3) {
+    return 2;
+  } else if (length === 4) {
+    return 3;
+  } else if (length <= 6) {
+    return 4;
+  } else if (length <= 8) {
+    return 5;
+  } else if (length <= 10) {
+    return 6;
+  } else if (length <= 13) {
+    return 7;
+  } else if (length <= 15) {
+    return 8;
+  } else {
+    return 0;
+  }
+}
+function calculateEuphoriaScore(length) {
+   if (length <= 2) {
+    return 0;
+  } else if (length === 6) {
+    return 1;
+  } else if (length === 7) {
+    return 2;
+  } else if (length <= 9) {
+    return 3;
+  } else if (length <= 11) {
+    return 4;
+  } else if (length <= 13) {
+    return 5;
+  } else if (length <= 15) {
+    return 6;
+  } else if (length <= 17) {
+    return 7;
+  } else if (length <= 19) {
+    return 8;
+  } else if (length === 20) {
+    return 9;
+  }
+}
+
+function indexMax(arr) {
+  let i, maxV, maxP;
+  for( i = 0; i < arr.length; i++) {
+    if( typeof maxV === "undefined" || arr[i] > maxV ) {
+      maxV = arr[i];
+      maxP = i;
+    }
+  }
+  switch (maxP) {
+    case 0:
+      return t("У Вас преобладает 'Обычное настроение'");
+    case 1:
+      return t("У Вас преобладает 'Астеническое состояние'");
+    case 2:
+      return t("У Вас преобладает 'Состояние эйфории'");
+    default:
+      return t("... пройдите тест ещё раз");
+  }
+}
+
+calculatePoints(points);
 
     const handleAnswer = (selectedPoints) => {
         setPoints(points.map((item, index) => {
           if (index === currentIndex) {
-            calculateFinalPoints();
             return selectedPoints;
           }
           return item;
         }));
-      
         handleNext();
-        calculateFinalPoints();
       };
-      
-
-      const calculateFinalPoints = () => {
-        let counts = {
-            a: 0,
-            b: 0,
-            c: 0
-        };
-    
-        for (let i = 0; i < points.length; i++) {
-            switch (points[i]) {
-                case 'a':
-                    counts.a++;
-                    break;
-                case 'b':
-                    counts.b++;
-                    break;
-                case 'c':
-                    counts.c++;
-                    break;
-                default:
-                    break;
-            }
-        }
-    
-        let maxCount = Math.max(counts.a, counts.b, counts.c);
- 
-        // console.log(maxCount);
-        if (maxCount === counts.a) {
-            setResultPoints(t("Вам наиболее подходят люди, родившиеся под знаками: Льва, Овна, Козерог и Стрельца."));
-        } else if (maxCount === counts.b) {
-            setResultPoints(t("Вам наиболее подходят люди, родившиеся под знаками: Близнецов, Телец, Весов и Водолея."));
-        } else {
-            setResultPoints(t("Bам наиболее подходят люди, родившиеся под знаками: Рака, Дева, Скорпиона и Рыб."));
-        }
-        
-    };
-    
     const handelHomePage = () => {
         setModalVisible(false)
         navigation.navigate('Home');
     }
     const handleSubmit = () => {
-        calculateFinalPoints();
-        setModalVisible(true);
+        setMoodFinalPoints(calculateMoodScore(moodPoints.length)),
+        setAsthenicFinalPoints(calculateAsthenicScore(asthenicCondition.length)),
+        setEuphoriaFinalPoints(calculateEuphoriaScore(euphoriaState.length))
+        setModalVisible(true); 
     };
 
     const handleNext = () => {
@@ -95,13 +185,12 @@ const App = () => {
 
     const currentQuestion = Data[currentIndex];
 
-
     return (
         <View style={[styles.container, {backgroundColor: theme.background}]}>
             <ProgressBar value={pointsProgressBar} max={Data.length} />
             {pointsProgressBar !== currentIndex +1 && (
-                <PreStartMessage messageTime={t('zodiac-pre-start-message-time')} messageText={t('zodiac-pre-start-message')}
-                     />
+                <PreStartMessage messageTime={t('сообщение времени теста настроения')} messageText={t('текст сообщения настроения')}
+                style={{ justifyContent: 'start', alignItems: 'start' , padding: 5}} />
             )}
             {pointsProgressBar !== currentIndex +1 && (
             <><Text style={[styles.textCurrentQuestion, { color: theme.color }]}>{t(currentQuestion.question)}
@@ -131,7 +220,7 @@ const App = () => {
                     </TouchableOpacity>
                 </View>
             )}
-            <Modal
+      <Modal
         animationType='fade'
         transparent={true}
         visible={modalVisible}
@@ -140,11 +229,22 @@ const App = () => {
         }}
       >
         <View style={styles.centeredView}>
+        <ScrollView style={styles.scrollView}>
           <View style={[styles.modalView, {backgroundColor: theme.background}]}>
             <View style={styles.textWrapper}>
-                <Text style={[styles.modalText, { color: theme.color }]}> {resultPoints}</Text>
+            <BarChart data={chartData} />
+                <Text style={[styles.modalText, { color: theme.color }]}>A - {t("Обычное настроение")}</Text>
+                <Text style={[styles.modalText, { color: theme.color }]}>B - {t("Астеническое")}</Text>
+                <Text style={[styles.modalText, { color: theme.color }]}>C - {t("Эйфории")}{"\n"}</Text>
+                <Text style={styles.modalTextFinalResalt}> {indexMax(totalPoint)}. {"\n"}</Text>
+            
+                <View>
+                    <View><Text style={styles.textStateMood}>  {t("Настроение")}{"\n"}</Text></View>
+                    <View><Text style={styles.textStateMood}>  {t("Астеническое состояние")}{"\n"}</Text></View>
+                    <View><Text style={styles.textStateMood}>  {t("Состояние эйфории")}{"\n"}</Text></View>
+                </View>
             </View>
-            <View style={[styles.button, styles.buttonClose]}>
+            <View style={[styles.buttonGoHome, styles.buttonClose]}>
                     <TouchableOpacity onPress={handelHomePage}>
                         <View style={styles.button}>
                             <Text style={styles.textStyle}>{t("GoHome")}</Text>
@@ -152,31 +252,27 @@ const App = () => {
                     </TouchableOpacity>
                 </View>
           </View>
+          </ScrollView>
         </View>
       </Modal>
         </View>
     );
 };
 
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        // justifyContent: 'space-around',
         padding: 3,
     },
     wrapperButtonAnswer: {
-        flex: 0.65,
-        alignItems: 'baseline',
-        // alignContent: 'flex-start',
+        flex: 0.55,
         justifyContent: 'space-around',
         flexDirection: 'column',
-        padding: 15,
-        gap: 20,
+        padding: 55,
     },
     textButtonAnswer: {
-        fontSize: 22,
+        fontSize: 19,
         color: '#4B1E19',
         marginTop:10,
     },
@@ -201,9 +297,12 @@ const styles = StyleSheet.create({
         flex: 0.06,
         backgroundColor: '#fffc' ,
         borderRadius: 50,
-        marginTop:10,     
+        marginBottom: 20,     
     },
-    buttonBack:{
+    textStateMood:{
+      textAlignVertical: 'center',
+      fontSize: 20,
+      padding: 10,
     },
     textQuestion: {
         flex: 0.1,
@@ -213,13 +312,14 @@ const styles = StyleSheet.create({
         borderBottomColor: '#fff',
     },
     textCurrentQuestion: {
-        // flex: 0.1,
+        flex: 0.5,
         fontSize: 28,
         textAlign: 'center',
-        textAlignVertical: 'top',
+        textAlignVertical: 'center',
         padding: 10,
         borderBottomWidth: 1,
-        borderBottomColor: '#fff'
+        borderBottomColor: '#fff',
+        marginTop: 20
     },
     centeredView: {
         flex: 1,
@@ -229,14 +329,9 @@ const styles = StyleSheet.create({
       modalView: {
         flex:1,
         width: '100%',
-        padding: 35,
         justifyContent: "center",
         alignItems: "center",
-        // shadowColor: "#000",
-        // shadowOffset: {
-        //   width: 0,
-        //   height: 2
-        // },
+        alignSelf: 'center',
         shadowOpacity: 0.25,
         shadowRadius: 3,
         elevation: 3
@@ -244,7 +339,13 @@ const styles = StyleSheet.create({
       button: {
         borderRadius: 20,
         padding: 7,
-        elevation: 10
+        elevation: 10,
+      },
+      buttonGoHome: {
+        borderRadius: 20,
+        padding: 7,
+        elevation: 10,
+        marginBottom: 50,
       },
       buttonClose: {
         marginTop: 50,
@@ -256,11 +357,20 @@ const styles = StyleSheet.create({
         textAlign: "center"
       },
       modalText: {
-        marginBottom: 15,
-        textAlign: "center",
-        fontSize: 30,
+        textAlign: 'left',
+        fontSize: 24,
         textAlignVertical: 'center',
-        padding: 10,
+        padding: 5,
+        marginLeft: 20,
+      },
+      modalTextFinalResalt: {
+        fontSize: 26,
+        fontWeight: '700',
+        color: '#fffc',
+        textAlignVertical: 'center',
+        textAlign: 'center',
+        borderBottomWidth: 1,
+        borderBottomColor: '#fff',
       },
       textWrapper: {
         backgroundColor: '#B29F91',
