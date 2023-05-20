@@ -19,6 +19,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+        implementation project(':react-native-svg')
         classpath('com.android.tools.build:gradle:7.4.1')
         classpath('com.facebook.react:react-native-gradle-plugin')
     }

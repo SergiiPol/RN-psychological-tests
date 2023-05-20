@@ -18,7 +18,6 @@ const App = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [resultPoints, setResultPoints] = useState();
     const finalPoints = (points).reduce((acc, curr) => acc + curr, 0);
-   
 
     const handleAnswer = (selectedPoints) => {
         setPoints(points.map((item, index) => {
@@ -32,8 +31,6 @@ const App = () => {
         handleNext();
         calculateFinalPoints();
       };
-      
-
       
       const calculateFinalPoints = () => {
         if (finalPoints <= 50) {
@@ -77,12 +74,12 @@ const App = () => {
 
     const currentQuestion = Data[currentIndex];
 
-
     return (
         <View style={[styles.container, {backgroundColor: theme.background}]}>
             <ProgressBar value={pointsProgressBar} max={Data.length} />
             {pointsProgressBar !== currentIndex +1 && (
-                <PreStartMessage style={{ justifyContent: 'start', alignItems: 'start' , padding: 5}} />
+                <PreStartMessage messageTime={t('сообщение времени теста депрессии')} messageText={t('текст сообщения депрессии')}
+                style={{ justifyContent: 'start', alignItems: 'start' , padding: 5}} />
             )}
             {pointsProgressBar !== currentIndex +1 && (
             <><Text style={[styles.textCurrentQuestion, { color: theme.color }]}>{t(currentQuestion.question)}

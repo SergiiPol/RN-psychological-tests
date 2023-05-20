@@ -100,7 +100,8 @@ const App = () => {
         <View style={[styles.container, {backgroundColor: theme.background}]}>
             <ProgressBar value={pointsProgressBar} max={Data.length} />
             {pointsProgressBar !== currentIndex +1 && (
-                <PreStartMessage style={{ justifyContent: 'start', alignItems: 'start' , padding: 5}} />
+                <PreStartMessage  messageTime={t('сообщение времени теста профессии')} messageText={t('текст сообщения профессии')}
+                style={{ justifyContent: 'start', alignItems: 'start' , padding: 5}} />
             )}
             {pointsProgressBar !== currentIndex +1 && (
             <><Text style={[styles.textCurrentQuestion, { color: theme.color }]}>{t(currentQuestion.question)}

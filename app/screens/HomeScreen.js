@@ -6,36 +6,27 @@ import themeContext from '../providers/ThemeContext';
 const App = ({navigation}) => {
     const theme = useContext(themeContext);
     const { t } = useTranslation(); 
-    
     return (
-        <View style={[styles.containerToolBar, { backgroundColor: theme.background }]}>
-          <Text style={[styles.text, { color: theme.color }]}>{t('HomeScreen')}</Text>
-          <TouchableOpacity onPress={()=> navigation.navigate('EPQ-R')}>
-            <View style={styles.button}>
-             <Text style={styles.textButton}>{t('GoToTheTest')}</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=> navigation.navigate('geography')}>
-            <View style={styles.button}>
-             <Text style={styles.textButton}>{t('geography')}</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=> navigation.navigate('Zodiac Match')}>
-            <View style={styles.buttonZodiac}>
-             <Text style={styles.textButtonZodiac}>{t('ZodiacMatch')}</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=> navigation.navigate('My profession...')}>
-            <View style={styles.buttonZodiac}>
-             <Text style={styles.textButtonZodiac}>{t('My profession...')}</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=> navigation.navigate('Assessing the level of depression')}>
-            <View style={styles.buttonZodiac}>
-             <Text style={styles.textButtonZodiac}>{t('Level of depression')}</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
+        <>
+          <Text style={[styles.text, { color: theme.color, backgroundColor: theme.background }]}>{t('HomeScreen')}</Text> 
+          <View style={[styles.containerToolBar, { backgroundColor: theme.background }]}>    
+              <TouchableOpacity onPress={() => navigation.navigate('Character and personality')}>
+                <View style={styles.button}>
+                  <Text style={styles.textButton}>{t('Character and personality')}</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate('Entertainment tests')}>
+                <View style={styles.button}>
+                  <Text style={styles.textButton}>{t('Entertainment tests')}</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate('Intellectual tests')}>
+                <View style={styles.button}>
+                  <Text style={styles.textButton}>{t('Intellectual tests')}</Text>
+                </View>
+              </TouchableOpacity>
+          </View>
+        </>
     );
 };
 
@@ -43,32 +34,18 @@ const App = ({navigation}) => {
 const styles = StyleSheet.create({
   containerToolBar:{
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
     gap: 15,
+    justifyContent: 'center',
   },
   text:{
-    display: "flex",
-    alignSelf: "center",
-    fontSize: 30,
+    width: '100%',
+    textAlign: "center",
+    textAlignVertical:'center',
+    fontSize: 36,
   },
-  button: {
-    // height: 50,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // borderBottomWidth: 2,
-    // borderColor: '#CB8A58',
-    borderRadius: 20,
-    padding: 7,
-    elevation: 15,
-    marginTop: 10,
-    backgroundColor: "#BFBDC0",
-  },
-  buttonZodiac:{
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // borderBottomWidth: 2,
-    // borderColor: '#CB8A58',
+  button:{
+    width: 250,
     borderRadius: 20,
     padding: 7,
     elevation: 15,
@@ -76,11 +53,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#BFBDC0",
   },
   textButton:{
-    fontSize: 32,
-    fontWeight: '700',
-    color: '#F2F2EF',
-  },
-  textButtonZodiac:{
     fontSize: 24,
     fontWeight: '700',
     color: '#F2F2EF',
