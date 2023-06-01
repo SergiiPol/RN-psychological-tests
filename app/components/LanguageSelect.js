@@ -41,7 +41,7 @@ import themeContext from '../providers/ThemeContext';
     <View >
           <Picker
             selectedValue={selectedValue}
-            style={[styles.containerLanguage, {backgroundColor: theme.background}]}
+            style={[styles.containerLanguage, {color: theme.color, backgroundColor: theme.background}]}
             onValueChange={handleValueChange}
           >
             <Picker.Item label="English" value="en" />

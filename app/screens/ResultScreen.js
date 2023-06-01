@@ -69,7 +69,7 @@ const App = ({route}) => {
             }
         } else if (resultPoints[1] <= 6) {
             if (resultPoints[2] > 16) {
-                return t('М');
+                return t('Mел');
             } else if (resultPoints[2] < 8) {
                 return t('Ф');
             } else if (resultPoints[2] >= 8) {

@@ -14,6 +14,11 @@ const App = ({navigation}) => {
              <Text style={styles.textButton}>{t('GoToTheTest')}</Text>
             </View>
           </TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.navigate('Cattell Test')}>
+            <View style={styles.button}>
+             <Text style={styles.textButton}>{t('тест Кэттела')}</Text>
+            </View>
+          </TouchableOpacity>
           <TouchableOpacity onPress={()=> navigation.navigate('Assessing the level of depression')}>
             <View style={styles.button}>
              <Text style={styles.textButton}>{t('Level of depression')}</Text>
@@ -22,6 +27,11 @@ const App = ({navigation}) => {
           <TouchableOpacity onPress={()=> navigation.navigate('Level of mood')}>
             <View style={styles.button}>
              <Text style={styles.textButton}>{t('Your mood today')}</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={()=> navigation.navigate('Your anxiety scale')}>
+            <View style={styles.button}>
+             <Text style={styles.textButton}>{t('Your anxiety scale')}</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -52,7 +62,14 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#F2F2EF',
     textAlignVertical: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#F2F2EF',
+    textAlignVertical: 'center',
+    textAlign: 'center',
+    backgroundColor: "grey",
+    borderRadius: 20,
   }
 })
 

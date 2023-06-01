@@ -36,7 +36,7 @@ const SwitcherTheme = () => {
             style={[styles.containerWrapper, {backgroundColor: theme.background}]}
             onPress={onModeChange}
         >
-            <Text>{t('ToggleTheme')}</Text> 
+            <Text style={[styles.text, { color: theme.color, backgroundColor: theme.background }]}>{t('ToggleTheme')}</Text> 
             <Text style={[styles.buttonText, {backgroundColor: theme.background}]}>
                 {mode ? <Feather name="sun" size={24} color="black" /> 
                       : <FontAwesome name="moon-o" size={24} color="black"/> }
@@ -55,6 +55,9 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         padding: 5
+    },
+    text : {
+        
     },
     buttonText: {
         color: '#fff',

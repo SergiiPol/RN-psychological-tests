@@ -232,7 +232,7 @@ calculatePoints(points);
         <ScrollView style={styles.scrollView}>
           <View style={[styles.modalView, {backgroundColor: theme.background}]}>
             <View style={styles.textWrapper}>
-            <BarChart data={chartData} />
+            <BarChart data={chartData} width={400} height={280}/>
                 <Text style={[styles.modalText, { color: theme.color }]}>A - {t("Обычное настроение")}</Text>
                 <Text style={[styles.modalText, { color: theme.color }]}>B - {t("Астеническое")}</Text>
                 <Text style={[styles.modalText, { color: theme.color }]}>C - {t("Эйфории")}{"\n"}</Text>
@@ -334,7 +334,8 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         shadowOpacity: 0.25,
         shadowRadius: 3,
-        elevation: 3
+        elevation: 3,
+        padding:5
       },
       button: {
         borderRadius: 20,
@@ -380,7 +381,8 @@ const styles = StyleSheet.create({
         borderLeftWidth: 1,
         borderTopWidth: 3,
         borderRightWidth: 1,
-        borderColor: '#fffc'
+        borderColor: '#fffc',
+        marginTop: 15,
       }
 });
 

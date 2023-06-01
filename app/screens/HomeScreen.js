@@ -45,19 +45,27 @@ const styles = StyleSheet.create({
     fontSize: 36,
   },
   button:{
-    width: 250,
+    width: 280,
     borderRadius: 20,
     padding: 7,
-    elevation: 15,
     marginTop: 10,
-    backgroundColor: "#BFBDC0",
+    backgroundColor: "#FDBF6E",
+    margin: 10,
+    shadowColor: '#000',
+    //shadowOffset: { width: 0, height: 5 },
+    //shadowOpacity: 0.5,
+    //shadowRadius: 2,
+    elevation: 12,
+    
   },
   textButton:{
     fontSize: 24,
     fontWeight: '700',
     color: '#F2F2EF',
     textAlignVertical: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
+    backgroundColor: "#E88846",
+    borderRadius: 20,
   }
 })
 

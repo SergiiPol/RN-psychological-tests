@@ -5,12 +5,14 @@ import CharacterAndPersonalityScreen from '../screens/CharacterAndPersonalityScr
 import EntertainmentTestsScreen from '../screens/EntertainmentTestsScreen';
 import IntellectualTestsScreen from '../screens/IntellectualTestsScreen';
 import PageScreen from '../screens/PageScreen';
+import CattellTest from '../screens/CattellTest';
 import HomeScreen from '../screens/HomeScreen';
 import GeographyScreen from '../screens/GeographyScreen';
 import ZodiacMatchScreen from '../screens/ZodiacMatchScreen';
 import MyProfessionScreen from '../screens/MyProfessionScreen';
 import LevelOfDepression from '../screens/LevelOfDepression';
 import LevelOfMoodScreen from '../screens/LevelOfMoodScreen';
+import AnxietyScale from '../screens/AnxietyScale';
 import ResultScreen from '../screens/ResultScreen';
 import {useTranslation} from 'react-i18next';
 import {EventRegister} from "react-native-event-listeners";
@@ -55,6 +57,19 @@ function App() {
                                   component={PageScreen}
                                   options={{
                                       title: 'EPQ-R',
+                                      headerStyle: {
+                                          backgroundColor: '#D5AA72',
+                                      },
+                                      headerTintColor: '#562B1A',
+                                      headerTitleStyle: {
+                                          fontWeight: 'bold',
+                                      },
+                                  }}
+                    />
+                    <Stack.Screen name='Cattell Test'
+                                  component={CattellTest}
+                                  options={{
+                                      title: 'Cattell Test',
                                       headerStyle: {
                                           backgroundColor: '#D5AA72',
                                       },
@@ -170,6 +185,20 @@ function App() {
                                   component={LevelOfMoodScreen}
                                   options={{
                                       title: 'Level of mood',
+                                      headerStyle: {
+                                          backgroundColor: '#D5AA72',
+                                          justifyContent: 'start',
+                                      },
+                                      headerTintColor: '#562B1A',
+                                      headerTitleStyle: {
+                                          fontWeight: 'bold',
+                                      },
+                                  }}
+                    />
+                    <Stack.Screen name='Your anxiety scale'
+                                  component={AnxietyScale}
+                                  options={{
+                                      title: 'Your anxiety scale',
                                       headerStyle: {
                                           backgroundColor: '#D5AA72',
                                           justifyContent: 'start',
