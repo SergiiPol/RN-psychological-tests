@@ -29,7 +29,6 @@ const App = () => {
 
     const handleAnswer = (point, currentQuestionId) => {
         const updatedTraits = {...traits};
-
         if (psychoticismKeys.includes(currentQuestionId)) {
             updatedTraits.psychoticism[currentQuestionId] = point;
         } else if (extraversionIntroversionKeys.includes(currentQuestionId)) {

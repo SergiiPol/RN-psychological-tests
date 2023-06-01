@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Modal, StyleSheet, View, Text, Button, TouchableOpacity } from 'react-native';
+import { Modal, StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import {useTranslation} from 'react-i18next';
 import Icon from 'react-native-vector-icons/Ionicons';
 import themeContext from '../providers/ThemeContext';
@@ -16,6 +16,7 @@ const PreStartMessage = ( { messageTime, messageText } ) => {
             </TouchableOpacity>
             <Modal visible={visible} animationType="slide" >
                 <View style={styles.modalWrapper}>
+                <ScrollView style={styles.scrollView}>
                     <View style={[styles.modalContainer, {backgroundColor: theme.background}]}>
                         <Text style={styles.textModalHeader}>{messageTime}{"\n"}</Text>
                         <Text style={styles.textModal}>{messageText}</Text>
@@ -25,6 +26,7 @@ const PreStartMessage = ( { messageTime, messageText } ) => {
                             </View>
                         </TouchableOpacity>
                     </View>
+                    </ScrollView>
                 </View>
             </Modal>
         </View>
@@ -32,14 +34,14 @@ const PreStartMessage = ( { messageTime, messageText } ) => {
 };
 const styles = StyleSheet.create({
     containerInformation: {
-        flex: 0.08,
+        flex: 0.1,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         alignSelf: 'center',
         height: 30,
         width: 30,
-        marginTop: 0,
+        marginTop: 7,
         marginRight: 10,
         zIndex: 20
     },
@@ -52,7 +54,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:'red',
       },
       buttonClose: {
         marginTop: 50,
@@ -60,6 +61,7 @@ const styles = StyleSheet.create({
       textButtonClose: {
         fontSize: 26,
         color: 'green',
+        marginBottom: 50
       },
       textModalHeader: {
         fontSize: 24,

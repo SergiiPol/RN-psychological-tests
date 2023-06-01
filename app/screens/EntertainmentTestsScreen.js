@@ -47,7 +47,15 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#F2F2EF',
     textAlignVertical: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
+    borderRadius: 20,
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#F2F2EF',
+    textAlignVertical: 'center',
+    textAlign: 'center',
+    backgroundColor: "grey",
+    borderRadius: 20,
   }
 })
 

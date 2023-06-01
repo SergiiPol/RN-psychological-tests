@@ -35,7 +35,7 @@ const ToolBar = () => {
         <View style={styles.modalWrapper}>
           <View style={[styles.modalContainer, {backgroundColor: theme.background}]}>
             <TouchableOpacity onPress={closeModal} style={styles.closeButton}>
-              <Ionicons name="close" size={24} color="white" />
+              <Ionicons name="close" size={30} color="white" />
             </TouchableOpacity>
             <LanguageSelect style={styles.LanguageSelect} />
             <SwitcherTheme style={styles.switcherTheme} />
@@ -76,19 +76,21 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     top: 0,
-    width: 210,
-    height: 200,
+    width: '100%',
+    height: 250,
     backgroundColor: '#D5AA72',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     paddingTop: 50,
-    paddingLeft: 20,
+    paddingLeft: '50%',
     zIndex: 2,
-  },
+    borderBottomLeftRadius: 300,
+    },
   closeButton: {
     position: 'absolute',
-    top: 10,
-    left: 10,
+     top: 10,
+     right: 15,
+     alignSelf: 'flex-end',
   },
   overlay: {
     position: 'absolute',

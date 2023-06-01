@@ -2,16 +2,20 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { VictoryBar, VictoryChart, VictoryTheme } from 'victory-native';
 
-const BarChart = ({ data }) => {
+const BarChart = ({ data, width, height, theme }) => {
 
     return (
       <View>
       <VictoryChart
-        //theme={VictoryTheme.material}
-        domainPadding={50}
-       // horizontal // Добавляем проп 'horizontal' для горизонтального графика
+        // theme={VictoryTheme.material}
+        theme={theme}
+        domainPadding={{ x: 20 }}
+        horizontal // Добавляем проп 'horizontal' для горизонтального графика
+        width={width}
+        height={height}
       >
         <VictoryBar
+          animate={{ duration: 2000 }}
           data={data}
           x="quarter" // Меняем ось Y на 'quarter'
           y="earnings" // Меняем ось X на 'earnings'
